@@ -1,2 +1,2 @@
-# Software-Design
-Projekat iz predmeta Projektovanje Softvera.
+Predmet: Projektovanje Softvera
+Timski projekat od 16 članova.
