@@ -1,0 +1,96 @@
+<div>
+    <div class="container">
+      <h2 class="tour-filter-title">Tour Filter</h2>
+
+    </div>
+
+    <div id="filter-container">
+    
+    <div>
+      <label for="authorFilter">Filter by Author Name:</label>
+      <input type="text" id="authorFilter" [(ngModel)]="authorFilter"/>
+    </div>
+    <div>
+      <label for="difficultyFilter">Filter by Difficulty:</label>
+      <select id="difficultyFilter" [(ngModel)]="difficultyFilter">
+        <option value="">-- Select Difficulty --</option>
+        <option value="0">Easy</option>
+        <option value="1">Medium</option>
+        <option value="2">Hard</option>
+       
+      </select>
+    </div>
+    <div>
+      <label for="travelMethodFilter">Filter by Travel Method:</label>
+      <select id="travelMethodFilter" [(ngModel)]="travelMethodFilter">
+        <option value="">-- Select Travel Method --</option>
+        <option value="0">Car</option>
+        <option value="1">Bicycle</option>
+        <option value="2">Walking</option>
+      </select>
+    </div>
+
+    <div>
+      <button (click)="sortToursByRating(true)">Sort by Highest Rating</button>
+     
+    </div>
+
+  
+
+    <div>
+        <button (click)="applyFilters()">Filter</button>
+      </div>
+
+      <div>
+        <button (click)="resetFilters()">Reset</button>
+      </div>
+
+    </div>
+    <!-- Table for displaying filtered data -->
+    <table border="1" class="center-table">
+      <thead>
+        <tr>
+          <th>Author Name</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Tags</th>
+          <th>Difficulty</th>
+          <th>Price</th>
+          <th>Publish Time</th>
+          <th>Archive Time</th>
+          <th>Distance</th>
+          <th>Travel Time</th>
+          <th>Travel Method</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Loop through your filtered tour data to populate the table -->
+        <tr *ngFor="let tour of filteredTours">
+          <!-- Dodajte uslov za prikazivanje samo tura sa statusom 1 -->
+          <ng-container *ngIf="tour.status === 1">
+            <td>{{ calculateName(tour.authorId) }}</td>
+            <td>{{ tour.name }}</td>
+            <td>{{ tour.description }}</td>
+            <td>{{ tour.tags }}</td>
+            <td>{{ mapDifficulty(tour.difficult) }}</td>
+
+            <td>{{ tour.price }}</td>
+            
+            <td>{{ tour.publishTime }}</td>
+            <td>{{ tour.archiveTime }}</td>
+            <td>{{ tour.distance }}</td>
+            <td>
+              <span *ngFor="let travel of tour.travelTimeAndMethod">{{ travel.travelTime }} </span>
+            </td>
+            <td>
+              <span *ngFor="let travel of tour.travelTimeAndMethod">{{ mapTravelMethod(travel.travelMethod) }} </span>
+            </td>
+            <td>{{ calculateRating(tour.id) !== 0 ? calculateRating(tour.id) : 'Not rated' }}</td>
+            
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

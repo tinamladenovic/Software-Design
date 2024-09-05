@@ -1,0 +1,73 @@
+<div class="main-container">
+    <div class="second-container">
+        <app-map (pinnedPlace)="onPinPlaced($event)" (changeValue) = "changeTourDistanceAndTime($event)"></app-map>
+        <!-- <button mat-raised-button color="primary" (click)="showFullRoute()"
+            class="add-checkpoint-button"><mat-icon>show</mat-icon></button> -->
+        <div class="right-pannel">
+            <form [formGroup]="checkpointForm" class="add-checkpoint-form">
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input matInput="text" formControlName="name" />
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Description</mat-label>
+                    <textarea matInput="text" cdkTextareaAutosize cdkAutosizeMinRows="1" formControlName="description"
+                        cdkAutosizeMaxRows="5"></textarea>
+                </mat-form-field>
+
+                <!-- <mat-form-field>
+                    <mat-label>Picture url</mat-label>
+                    <input matInput="text" cdkTextareaAutosize cdkAutosizeMinRows="1" formControlName="pictureURL"
+                        cdkAutosizeMaxRows="5">
+                </mat-form-field> -->
+
+                <mat-form-field>
+                    <mat-label>Add checkpoint address</mat-label>
+                    <input matInput="text" [value]="clickedAddress" />
+                </mat-form-field>
+                
+                <div class="file-input-container">
+                    <label class="custom-button" for="fileInput">Add image</label>
+                    <input type="file" id="fileInput" class="file-input" formControlName="pictureURL">
+                </div>
+
+                
+                
+
+                
+
+                <button mat-raised-button type="submit" color="primary" (click)="saveCheckpoint()"
+                    class="submit-form-button">Submit</button>
+                <button mat-raised-button  color="primary" (click)="goBack()"
+                    >Back</button>
+
+                
+
+                <!-- <button mat-raised-button type="submit" color="primary" (click)="editCheckpoint()"
+                    class="submit-form-button">Edit</button> -->
+            </form>
+
+            
+            <div class="checkpoints">
+                <div class="checkpoint" *ngFor="let checkpoint of addedCheckpoints">
+                    <div class="left">
+                        <h3>{{checkpoint.name}}</h3>
+                        <!-- <div>Lat: {{checkpoint.latitude}}</div>
+                        <div>Long: {{checkpoint.longitude}}</div> -->
+
+                    </div>
+                    <div class="right">
+                        <!-- <button color="primary" (click)="editForm(checkpoint)"
+                            mat-icon-button><mat-icon>edit</mat-icon></button> -->
+                        <button class="add-encounter-button" *ngIf="!checkpoint.encounterId" (click)="addEncounterOnCheckpoint(checkpoint)">Add encounter</button>
+                        <button (click)="deleteCheckpoint(checkpoint.id!)" mat-icon-button>
+                            <mat-icon>delete</mat-icon></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <xp-encounter-form [checkpoint]="selectedCheckpoint" *ngIf="showEncounterForm"></xp-encounter-form>
+
+</div>

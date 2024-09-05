@@ -1,0 +1,38 @@
+<div class="blog-form-wrapper">
+  <form [formGroup]="blogForm">
+    <div>
+      <mat-form-field>
+        <mat-label>Blog name</mat-label>
+        <input matInput formControlName="name" type="text" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Blog description</mat-label>
+        <textarea
+          markdown
+          matInput
+          cdkTextareaAutosize
+          cdkAutosizeMinRows="2"
+          formControlName="description"
+          cdkAutosizeMaxRows="10"
+        ></textarea>
+      </mat-form-field>
+      <div class="custom-file-input">
+        <input type="file" id="imageUpload" (change)="onFileChange($event)" formControlName="images"/>
+        <label for="fileInput">Choose a image</label>
+        <span class="file-name">{{selectedFileNames}}</span>
+      </div>
+      <button
+        color="primary"
+        type="submit"
+        (click)="addBlog()"
+        mat-raised-button
+        class="publish-btn"
+      >
+        Publish Blog
+      </button>
+    </div>
+  </form>
+  <div class="created-blog-wrapper" *ngIf="blogCreated">
+    <div class="blog-created-message">Blog succesfully created</div>
+  </div>
+</div>

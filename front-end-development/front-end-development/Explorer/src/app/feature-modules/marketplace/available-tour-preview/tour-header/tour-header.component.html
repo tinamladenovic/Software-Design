@@ -1,0 +1,51 @@
+<div class="wrapper">
+  <div>
+    <div>
+      <p class="heading">{{ tour.name }}</p>
+      <!-- <div (click)="removeFromFavorite(tour)">
+        <mat-icon
+          style="color: gold; transform: scale(2); padding-left: 10px"
+          *ngIf="tour.isFavorite"
+          >star</mat-icon
+        >
+      </div>
+      <div (click)="addToFavorite(tour)">
+        <mat-icon
+          style="color: gold; transform: scale(2); padding-left: 10px"
+          *ngIf="!tour.isFavorite"
+          >star_border</mat-icon
+        >
+      </div> -->
+    </div>
+  </div>
+  <mat-card-actions>
+    <xp-tour-author [authorid]="tour.authorId"></xp-tour-author>
+  </mat-card-actions>
+
+  <div class="row-space-between header-container">
+    <div class="row-left">
+      <div class="row money">
+        <mat-icon color="primary">attach_money</mat-icon>
+        <div>{{ tour.price }}</div>
+      </div>
+
+      <div class="row distance">
+        <mat-icon color="primary">map_distance</mat-icon>
+        <div>{{ tour.distance }} km</div>
+      </div>
+    </div>
+
+    <div class="checkpoint">
+      <mat-icon color="primary">place</mat-icon>
+      <div *ngIf="tour.checkpoints.length === 0; else listNotEmpty">
+        <span>No checkpoints</span>
+      </div>
+      <ng-template #listNotEmpty>
+        <div>{{ tour.checkpoints[0].name }}</div>
+      </ng-template>
+    </div>
+  </div>
+  <div>
+    <p class="description">{{ tour.description }}</p>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+    <div class="container">
+      <h3>Update profile</h3>
+      <div class="image-container" *ngIf="userProfile">
+        <img
+          class="card-image"
+          mat-card-image
+          [src]="getFullImageUrl(userProfile.image)"
+        />
+      </div>
+      <input type="file" (change)="onFileSelected($event)" />
+      <form [formGroup]="profileForm">
+        <div>
+          <mat-form-field>
+            <mat-label>Name:</mat-label>
+            <input matInput formControlName="name" type="text" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Surname:</mat-label>
+            <input matInput formControlName="surname" type="text" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Motto:</mat-label>
+            <input matInput formControlName="motto" type="text" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Biography:</mat-label>
+            <input matInput formControlName="biography" type="text" />
+          </mat-form-field>
+          <button
+            [hidden]="isVisible"
+            mat-raised-button
+            type="submit"
+            colors="primary"
+            (click)="enableForm()"
+            class="enable-btn"
+          >
+            Enable
+          </button>
+          <div class="buttonDiv">
+            <button
+              [hidden]="!isVisible"
+              mat-raised-button
+              colors="primary"
+              (click)="cancelUpdate()"
+            >
+              Close
+            </button>
+            <button
+              [hidden]="!isVisible"
+              mat-raised-button
+              colors="primary"
+              type="submit"
+              (click)="updateProfile()"
+              class="enable-btn"
+            >
+              Update
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>

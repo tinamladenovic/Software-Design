@@ -1,0 +1,15 @@
+<div class="container">
+  <form (submit)="editComment()">
+    <div class="form-group">
+      <input
+        class="form-control"
+        type="text"
+        name="comment"
+        placeholder="Comment"
+        [(ngModel)]="editedText"
+        required
+      />
+    </div>
+    <button class="btn-submit" type="submit">Update Comment</button>
+  </form>
+</div>

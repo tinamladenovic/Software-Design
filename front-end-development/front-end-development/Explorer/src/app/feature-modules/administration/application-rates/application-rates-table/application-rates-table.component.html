@@ -1,0 +1,37 @@
+<div>
+    <h1>Application rates</h1>
+    <table mat-table [dataSource]="applicationRates">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>Id</th>
+            <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>name</th>
+            <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+        <ng-container matColumnDef="surname">
+            <th mat-header-cell *matHeaderCellDef>Surname</th>
+            <td mat-cell *matCellDef="let element">{{ element.surname }}</td>
+        </ng-container>
+        <ng-container matColumnDef="rate" class="rate">
+            <th mat-header-cell *matHeaderCellDef class="rate">Rate</th>
+            <td mat-cell *matCellDef="let element" class="rate">
+                {{ element.rate }}
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="comment">
+            <th mat-header-cell *matHeaderCellDef>Comment</th>
+            <td mat-cell *matCellDef="let element">{{ element.comment }}</td>
+        </ng-container>
+        <ng-container matColumnDef="creationTime">
+            <th mat-header-cell *matHeaderCellDef>Creation time</th>
+            <td mat-cell *matCellDef="let element">{{ element.creationTime | date:'medium' }}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <mat-paginator #paginator class="paginator" (page)="handlePageEvent($event)" [length]="length" [pageSize]="pageSize"
+        [showFirstLastButtons]="true" [pageSizeOptions]="pageSizeOptions" [pageIndex]="pageIndex"
+        aria-label="Select page">
+    </mat-paginator>
+</div>

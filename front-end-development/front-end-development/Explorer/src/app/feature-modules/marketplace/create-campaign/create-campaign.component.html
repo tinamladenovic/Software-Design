@@ -1,0 +1,18 @@
+<div class="create-campaign-container">
+    <form class="create-form" [formGroup]="compositeTourForm">
+        <div class="name-input">
+            <input type="text" placeholder="Give campaign some name..." formControlName = "name"/>
+            <button class="create-button" (click)="createCompositeTour()" [disabled] = "!isAllValid">Create</button>
+        </div>
+        <h1>Select tours:</h1>
+        <div class="all-tours">
+            <div class="campaign-tours" *ngFor="let tour of touristTours">
+                <xp-campaign-tour
+                 [tour] = "tour"
+                 (addTour) = "addTourToArray($event)"
+                 (removeTour) = "removeTourFromArray($event)"
+                 ></xp-campaign-tour>
+            </div>
+        </div>
+    </form>
+</div>

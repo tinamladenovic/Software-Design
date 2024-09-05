@@ -1,0 +1,34 @@
+<div class = "touristclub-form-container">
+
+
+    <form [formGroup]="touristClubForm" class = "add-club-form">
+
+        <h1>Create tourist club</h1>
+        <hr>
+
+        <mat-form-field>
+        <mat-label>Club Name</mat-label>
+        <input matInput="text" formControlName="clubName"/>
+        </mat-form-field>
+
+        <mat-form-field>
+        <mat-label>Description</mat-label>
+        <textarea matInput="text" cdkTextareaAutosize cdkAutosizeMinRows="1" formControlName="description" cdkAutosizeMaxRows="5"></textarea>
+        </mat-form-field>
+
+        <!--
+        <button type="button" mat-raised-button (click)="fileInput.click()" class = "choose-file-button">Choose File</button>
+        <input hidden (change)="onFileSelected($event)" #fileInput type="file">
+        <span class="file-name">{{selectedFile?.name}}</span>
+        -->
+
+        <div class="custom-file-input">
+            <input type="file" id="fileInput" (change)="onFileSelected($event)" />
+            <label for="fileInput">Choose a file</label>
+            <span class="file-name">{{ selectedFileName }}</span>
+          </div>
+
+
+        <button mat-raised-button type="submit" color = "primary" (click)="addTouristClub()" class = "submit-form-button">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,181 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+app-map {
+    width: 70%;
+    margin-top: 2rem;
+}
+
+.emergency-numbers {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 82.5%;
+    margin-top: 7px;
+    margin-bottom: 2rem;
+}
+
+.emergency-number{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 18%;
+    height: 3rem;
+    background-color: #FAF8F3;
+    border: 1px solid #315149;
+    border-radius: .75rem;
+    overflow: hidden;
+    font-weight: 500;
+    transition: all .2s ease-in-out;
+    cursor: default;
+}
+
+.emergency-number:hover{
+    background-color: #315149;
+    color: #fff;
+    scale: 1.1;
+}
+
+.tour-recommended-card-div {
+    perspective: 1500px;
+    perspective-origin: 50% 50%;
+  }
+  
+  .recommended-tour-card {
+    position: relative;
+    transition: transform 0.5s, box-shadow 0.5s;
+    transform-style: preserve-3d;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+    width: 80%; 
+    margin: 0 auto;
+    padding: 20px; 
+    border-radius: 10px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .recommended-tour-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+  }
+  
+  .recommended-tour-header {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px; /* Adjust this to your liking */
+  }
+  
+  .recommended-tour-header h2 {
+    margin: 0; /* Removes the default margin */
+    font-size: 1.5rem;
+  }
+
+  .description {
+    margin-top: 0px; /* Adjust this to your liking */
+  }
+
+.card-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    align-self: center;
+}
+
+
+.image-slider-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+
+mat-card-content {
+    margin-bottom: 20px;
+}
+
+
+.stats-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 15px;
+
+    margin-bottom: 10px;
+}
+
+
+.tour-stats {
+    margin-left: 5px;
+    font-size: 110%;
+    font-weight: normal;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.tour-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.tour-recommended-card-div {
+    margin: 10px;
+}
+
+
+.recommended-tour-card {
+    border: 2px solid #315149;
+    /* Border color */
+    border-radius: 15px;
+    /* Border radius to make it rounded */
+    overflow: hidden;
+    /* Ensure the border-radius is applied to the entire card */
+}
+
+.submit-form-button{
+    padding: 1.5rem;
+    font-size: large;
+    font-weight: 600;
+    text-transform: capitalize;
+    height: 1rem;
+    width: 13%;
+    margin-bottom: 1.5rem;
+}
+
+.submit-form-button-1{
+    padding: 1.5rem;
+    font-size: large;
+    font-weight: 600;
+    text-transform: capitalize;
+    height: 1rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    margin-top: 2.5rem;
+}

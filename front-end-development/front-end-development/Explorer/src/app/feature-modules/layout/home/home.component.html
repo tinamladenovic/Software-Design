@@ -1,0 +1,33 @@
+<section class="landingPage" id="landingPage">
+  <div class="landingPage__text-box">
+    <h1 class="heading-primary">
+      <span class="heading-primary--main">Tourist agency</span>
+      <span class="heading-primary--second">Sedmica</span>
+    </h1>
+    <a
+      *ngIf="user && user.username === ''"
+      href="login"
+      class="btn--white btn btn--animated"
+      >LOG IN TO START</a
+    >
+    <h2
+      *ngIf="user && user.username !== ''"
+      class="heading-secondary heading-secondary--main welcome-message"
+    >
+      welcome {{ user.username }}
+    </h2>
+    <h3 class="heading-tertiary heading-tertiary--main">Powered by 7. grupa</h3>
+  </div>
+
+  <div class="social-icons-container">
+    <a href="https://www.instagram.com/gringo_psw/" target="_blank">
+      <img src="../../../../assets/images/instagram.png" alt="Instagram Logo" />
+    </a>
+    <a href="//www.facebook.com/profile.php?id=61554641068392" target="_blank">
+      <img src="../../../../assets/images/facebook1.png" alt="Facebook Logo" />
+    </a>
+    <a href="https://twitter.com/Grupa7Psw" target="_blank">
+      <img src="../../../../assets/images/twitter1.png" alt="Twitter Logo" />
+    </a>
+  </div>
+</section>

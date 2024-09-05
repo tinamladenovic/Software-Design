@@ -1,0 +1,75 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 0px;
+}
+
+.row-space-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.description {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.money {
+  width: 40px;
+}
+
+.distance {
+  width: 60px;
+  margin-right: 1rem;
+}
+
+.checkpoint {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  max-width: 150px;
+}
+
+.header-container {
+  font-size: 14px;
+  width: 100%;
+}
+
+.heading {
+  color: #315149;
+  font-weight: 500;
+  font-size: 28px;
+  justify-self: flex-start;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 60px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 6px;
+}
+
+.row-left {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100px;
+}

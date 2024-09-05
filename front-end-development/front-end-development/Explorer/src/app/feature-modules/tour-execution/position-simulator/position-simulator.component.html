@@ -1,0 +1,94 @@
+<div toastContainer></div>
+<div class="main-container">
+
+
+    <app-map (pinnedPlace)="onPinPlaced($event)" (changeValue)="updateCoveredDistance($event)"
+        (activatedEncounterId)="activateEncounter($event)"></app-map>
+    <div class="emergency-numbers">
+        <div *ngIf="police" class="emergency-number">Police number: {{police}}</div>
+        <div *ngIf="ambulance" class="emergency-number">Ambulance number: {{ambulance}}</div>
+        <div *ngIf="fireService" class="emergency-number">Fire service number: {{fireService}}</div>
+    </div>
+    <button *ngIf="!tourStarted"  type="submit" color="primary" (click)="startTour()"
+        class="btn-primary submit-form-button">Start Tour</button>
+    <button *ngIf="tourStarted && !tourFinished"  type="submit" color="primary" (click)="abandonTour()"
+        class="btn-primary submit-form-button">Abandon Tour</button>
+    <button *ngIf="tourFinished"  type="submit" color="primary" (click)="showAllTours()"
+        class="btn-primary submit-form-button">My tours</button>
+</div>
+
+
+<!-- <div>
+    <xp-tour-rating></xp-tour-rating>
+</div> -->
+
+
+<div class="container">
+    <button  type="submit" color="primary" class="btn-primary submit-form-button"
+        (click)="getRecommendedTours()">Recommended
+        Tours</button>
+    <div *ngIf="tours != null" class="tour-container">
+        <div *ngFor="let tour of tours" class="tour-recommended-card-div">
+            <div class="recommended-tour-card">
+                <div class="recommended-tour-header">
+                    <h2 class="submit-form-button">
+                        {{tour.Name}}
+                    </h2>
+                </div>
+                <div class="description">
+                    <p>
+                        {{tour.Description}}
+                    </p>
+                </div>
+                <div class="card-actions">
+                    <div class="price-distance">
+                        <div class="price-distance">
+                            <h3>
+                                Price: {{tour.Price}}$ 
+                            </h3>
+                        </div>
+                        <div class="price-distance">
+                            <h3>Distance: {{tour.Distance}}m</h3>
+                        </div>
+                    </div>
+                    <!-- <button [disabled]="!shouldRenderAddToCartButton" (click)="addToCart_tour(tour)"
+                        [style.background]="shouldRenderAddToCartButton ? 'blue' : 'gray'">
+                        {{ shouldRenderAddToCartButton === false ? 'Already have' : 'Add to cart' }}
+                    </button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="tours != null">
+        <!-- <div>
+            <button mat-raised-button type="submit" color="primary" class="submit-form-button"
+                (click)="getRecommendedTours()">Send tours to my email</button>
+        </div> -->
+        <div>
+            <button type="submit" class="btn-primary submit-form-button-1"
+                (click)="availableTours()">Go to available tours</button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="encounterActive" class="active-encounter-info">
+    <h2>Active Encounter</h2>
+    <h3>{{ encounter.name }}</h3>
+    <p>{{ encounter.description }}</p>
+    <div *ngIf="encounter.type === 1">
+        <p title="Find the location from which the image has been captured.">Type: Hidden Location</p>
+        <img [src]="getFullImageUrl(encounter.imageUrl)" alt="Encounter image">
+    </div>
+    <div *ngIf="encounter.type === 0">
+        <p title="The required amount of people have to be inside the encounter range">Type: Social</p>
+        <p>Required people: {{encounter.socialEncounterRequiredPeople}}</p>
+    </div>
+    <div *ngIf="encounter.type === 2">
+        <button *ngIf="encounterActive" mat-raised-button type="submit" color="primary"
+            (click)="finishMiscEncounter()">Encounter Finished</button>
+    </div>
+</div>
+
+
+<button *ngIf="encounterActive" mat-raised-button type="submit" color="primary" (click)="abandonEncounter()"
+    class="submit-form-button">Abandon Encounter</button>

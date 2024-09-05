@@ -1,0 +1,50 @@
+.notification-container{
+    width: 30rem;
+    height: 45rem;
+    background-color: #fff;
+    border-radius: .45rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.heading-secondary {
+    padding: 1rem;
+    text-align: left;
+    color: #333;
+    margin-top: .75rem;
+    text-transform: uppercase;
+    font-size: 1.65rem;
+}
+
+hr{
+    background-color: #333;
+}
+
+h3{
+    text-align: left;
+    font-weight: 700;
+    color: #333;
+    padding: 1rem;
+}
+
+.notifications{
+    text-align: center;
+}
+
+.not{
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    transition: all 0.5s;
+    text-align: left;
+    padding: 1rem;
+
+}
+
+.not:hover{
+    background-color: #eee;
+}
+
+.sender {
+    font-weight: bold;
+    margin-right: .5rem;
+  }

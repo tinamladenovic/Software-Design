@@ -1,0 +1,46 @@
+.main-container{
+  padding: 20px;
+  background-color: #FAF8F3;
+}
+
+
+.btn-menu-container{
+display: flex;
+justify-content: center;
+margin: 1rem;
+margin-left: 5.5rem;
+text-align: center;
+}
+
+
+.tours
+{
+  display: flex;
+  flex-direction: column; 
+}
+
+.btn-menu{
+  width: 28.2rem;
+  margin-bottom: 1rem;
+  margin-right: 4rem;
+}
+@media only screen and (max-height: 800px) {
+  .btn-menu {
+    white-space: nowrap;
+    width: 19.2-rem;
+    margin-bottom: 1rem;
+    margin-right: 4rem;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+  }
+}
+.btn-proceed-bundle{
+  margin-left: 11.5rem;
+  width: 80%;
+}
+@media only screen and (max-height: 800px) {
+  .btn-proceed-bundle {
+    margin-left: 8.3rem;
+  }
+}

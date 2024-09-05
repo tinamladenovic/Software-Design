@@ -1,0 +1,14 @@
+<form [formGroup]="touristNoteForm">
+    <div>
+        <mat-form-field>
+          <mat-label>Note</mat-label>
+          <textarea matInput
+          cdkTextareaAutosize
+          cdkAutosizeMinRows="1"
+          formControlName="note"
+          cdkAutosizeMaxRows="5"></textarea>
+        </mat-form-field>
+    <button *ngIf="!shouldEdit" color="primary" type="submit" (click)="addTouristNote()" mat-raised-button>Done</button>
+    <button *ngIf="shouldEdit" color="primary" type="submit" (click)="updateTouristNote()" mat-raised-button>Done</button>
+    </div>
+</form>

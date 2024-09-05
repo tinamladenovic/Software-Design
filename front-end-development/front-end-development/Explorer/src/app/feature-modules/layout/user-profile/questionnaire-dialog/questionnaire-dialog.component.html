@@ -1,0 +1,21 @@
+<p>questionnaire-dialog works!</p>
+<div>
+  <strong>Question:</strong>
+  <p>{{ questionnaire?.question }}</p>
+  <strong>Answer:</strong>
+  <p>{{ questionnaire?.answer }}</p>
+</div>
+<div *ngIf="remainingTime > 0">
+  <p>Remaining time: {{ remainingTime }} seconds</p>
+</div>
+<div>
+  <label for="answerInput">Enter your answer:</label>
+  <input
+    id="answerInput"
+    [(ngModel)]="userAnswer"
+    placeholder="Type your answer here"
+  />
+</div>
+<div>
+  <button (click)="SubmitAnswer(userAnswer)">Submit</button>
+</div>

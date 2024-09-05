@@ -1,0 +1,18 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Club details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let oc of ownerClubs">
+                <td>{{oc.clubName}}</td>
+                <td>{{oc.description}}</td>
+                <td><button (click)="navigateToOwnerClubOptions(oc.id)">Details</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

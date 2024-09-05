@@ -1,0 +1,57 @@
+<div class="tour-recommended-card-div">
+    <mat-card class="recommended-tour-card">
+        <mat-card-header class="recommended-tour-header">
+            <h3 class="tour-name">{{tour.name}}</h3>
+            <mat-chip [ngClass]="getDifficultyClass()">
+                {{ tour.difficult === 0 ? 'Easy' : tour.difficult === 1 ? 'Medium' : 'Hard' }}
+            </mat-chip>
+        </mat-card-header>
+
+        <div class="image-slider-div">
+            <xp-picture-slider *ngIf="checkpoints.length > 0" class="picture-slider" [checkpoints]="checkpoints"
+                imageSize="250" />
+        </div>
+
+        <div class="tags">
+            <mat-chip *ngFor="let tag of tags" class="example-box"
+                [ngStyle]="{'background-color': '#315149'}">{{tag}}</mat-chip>
+        </div>
+
+        <div >
+            <div class="stats-container">
+                <mat-icon style="color: gold;" matTooltip="Average rating for the past week">star</mat-icon>
+                <h3 class="tour-stats">
+                    {{averageRating | number:'1.2-2'}} 
+                    <span matTooltip="Number of ratings for the past week">
+                        ({{ratingCount}})
+                    </span>
+                </h3>
+            </div>
+            <div class="stats-container">
+                <mat-icon matTooltip="Number of purchases">shopping_cart</mat-icon>
+                <h3 class="tour-stats">{{orderCount}}</h3>
+            </div>
+        </div>
+
+        <mat-card-content>
+            <p class="desc">
+                {{tour.description}}
+            </p>
+        </mat-card-content>
+        <mat-card-actions class="card-actions">
+            <div class="price-distance">
+                <div class="price-distance">
+                    <i class="material-icons">attach_money</i>
+                    <h3>{{tour.price}}</h3>
+                </div>
+                <div class="price-distance">
+                    <i class="material-icons">map</i>
+                    <h3>{{tour.distance}}</h3>
+                </div>
+            </div>
+            <button [disabled]="!shouldRenderAddToCartButton" mat-raised-button (click)="addToCart_tour(tour)" color="primary" type="submit">
+                {{ shouldRenderAddToCartButton === false ? 'Already have' :  'Add to cart' }}
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

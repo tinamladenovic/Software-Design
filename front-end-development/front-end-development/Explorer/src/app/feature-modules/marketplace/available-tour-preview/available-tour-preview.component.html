@@ -1,0 +1,79 @@
+<div>
+  <mat-tab-group>
+    <mat-tab label="Recommended tours">
+      <div class="recommended-tours">
+        <xp-carousel>
+          <ng-container
+            *ngFor="let tour of recommendedTours"
+            class="recommended-tours-display"
+          >
+            <ng-container *carouselItem>
+              <xp-tour-preview-card class = "preview-card" [tour]="tour" [shouldRenderAddToCartButton]="shouldRenderAttribute(tour.id)"
+                (addToCartClick)="addToCart_Tour($event)" (click)="redirectToTourOverview(tour.id)">
+              </xp-tour-preview-card>
+            </ng-container>
+          </ng-container>
+        </xp-carousel>
+      </div>
+    </mat-tab>
+    <mat-tab label="Active Tours">
+      <div class="recommended-tours">
+        <xp-carousel>
+          <ng-container
+            *ngFor="let tour of recommendedActiveTours"
+            class="recommended-tours-display"
+          >
+            <ng-container *carouselItem>
+              <xp-tour-preview-card class = "preview-card" [tour]="tour" [shouldRenderAddToCartButton]="shouldRenderAttribute(tour.id)"
+                [isActiveTourCard]=true (addToCartClick)="addToCart_Tour($event)" (click)="redirectToTourOverview(tour.id)">
+              </xp-tour-preview-card>
+            </ng-container>
+          </ng-container>
+        </xp-carousel>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+  <div>
+    <h1>Available Tours</h1>
+    <div *ngIf="availableTours" class="available-tours">
+      <mat-card *ngFor="let tour of availableTours" class="tour-card">
+        <mat-card-content class="content-card" >
+          <xp-picture-slider imageSize="450" imageSize2="200" [checkpoints]="tour.checkpoints" />
+          <div>
+            <xp-tour-header
+              [tour]="tour"
+              (addToFavoriteClick)="addToFavorite($event)"
+              (removeFromFavouriteClick)="removeFromFavorite($event)"
+              (addToCartClick)="addToCart($event)"
+              (click)="redirectToTourOverview(tour.id)"
+            ></xp-tour-header>
+          </div>
+
+          <div *ngIf="tour.tourReviews.length === 0; else reviewsListNotEmpty">
+            <p class="recensions">This tour still has no recensions.</p>
+          </div>
+
+          <ng-template #reviewsListNotEmpty>
+            <p>Check what others have said about this tour:</p>
+            <div class="reviews-wrapper">
+              <div *ngFor="let review of tour.tourReviews">
+                <xp-tour-review [review]="review" />
+              </div>
+            </div>
+          </ng-template>
+          <mat-card-actions>
+            <button
+              class="add-to-cart-btn"
+              (click)="addToCart(tour)"
+              color="primary"
+              type="submit"
+              mat-raised-button
+            >
+              Add to Cart
+            </button>
+          </mat-card-actions>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

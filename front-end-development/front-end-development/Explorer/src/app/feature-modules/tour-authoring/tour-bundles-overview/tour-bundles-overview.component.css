@@ -1,0 +1,32 @@
+.main-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.table-div
+{
+    width: 60%;
+    display: flex;
+    align-self: center;
+    margin-top: 5rem;
+}
+
+.th
+{
+    background-color: #ffffff;
+}
+
+button
+{
+    background-color: #315149;
+    color: #f7f7f7 !important;
+}
+
+button:hover
+{
+    background-color: #315149;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}

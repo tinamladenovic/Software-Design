@@ -1,0 +1,54 @@
+<div class="destination">
+    <div class="container">
+        <h1>Destinations</h1>
+        <hr>
+        <div class="destination-details">
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                            <th>Longitude</th>
+                            <th>Latitude</th>
+                            <th>Image</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let d of destinations">
+                            <td>{{d.name}}</td>
+                            <td>{{d.description}}</td>
+                            <td>{{d.type}}</td>
+                            <td>{{d.longitude}}</td>
+                            <td>{{d.latitude}}</td>
+                            <td>
+                                <img [src]="getFullImageUrl(d.imageURL)" alt="No image"/>
+                            </td>
+                            <td>
+                                <button color="accent" (click)="deleteDestination(d.id || 0)" mat-icon-button>
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+                                <button color="primary" (click)="onEditClicked(d)" mat-icon-button>
+                                    <mat-icon>edit</mat-icon>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <button color="primary" (click)="onAddClicked()" mat-icon-button>
+                                <mat-icon>add</mat-icon>
+                            </button>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <xp-destination-form 
+                    *ngIf="shouldRenderDestinationForm" [shouldEdit]="shouldEdit" [destination]="selectedDestination" 
+                    (destinationsUpdated)="getDestinations()" (closeForm)="closeForm()"></xp-destination-form>
+            </div>
+        </div>
+    </div>
+</div>

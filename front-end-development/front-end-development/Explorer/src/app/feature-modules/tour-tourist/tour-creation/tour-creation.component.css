@@ -1,0 +1,110 @@
+.checkpoints
+{
+    margin-left: 1rem;
+    margin-top: 1.5px;
+}
+.checkpoint
+{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    background-color: #f7f7f7;
+    align-content: center;
+    margin-top: 10px;
+}
+.checkpoint:hover
+{
+    background-color: #d6d6d6;
+}
+p
+{
+    margin: 0;
+    padding: 0;
+}
+mat-icon
+{
+    margin: 0;
+    padding: 0;
+    margin-right: 10px;
+}
+
+.back-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* tour-card.component.css /
+  / Optional: Add hover effect */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    font-weight: bold;
+  }
+
+  .card-body {
+    padding: 15px;
+  }
+
+
+  .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .main-container{
+    padding: 20px;
+  }
+
+  .createForm{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+  }
+  .createContainer{
+      background-color: whitesmoke;
+      padding: 20px;
+      border-radius: 20px;
+  }
+
+
+  h1{
+      font-size: 36px;
+      padding: 10px;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      font-variant: small-caps;
+  }
+  .example-form {
+      min-width: 150px;
+      max-width: 500px;
+      width: 100%;
+      gap: 10px;
+
+    }
+
+    .example-full-width {
+      width: 100%;
+    }
+
+
+  .submitContainer{
+      align-self: center;
+      margin: 10px;
+  }
+  .buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }

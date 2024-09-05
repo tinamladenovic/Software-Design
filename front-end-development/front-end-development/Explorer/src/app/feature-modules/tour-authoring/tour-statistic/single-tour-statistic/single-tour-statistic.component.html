@@ -1,0 +1,27 @@
+<div class="main-container">
+    <div class="statistic-container">
+        <div class="header-container">
+            Statistic
+        </div>
+        <div class="content-container">
+            <div class="content-element">
+                Number of sales: {{tourStatistic.sales}}
+            </div>
+            <div class="content-element">
+                Number of executions: {{tourStatistic.executions}}
+            </div>
+            <div class="content-element">
+                Number of finishes : {{tourStatistic.finishes}}
+            </div>
+            <table class="checkpoints-table">
+                <tbody >
+                    <tr *ngFor = "let percentage of checkpointPercentagesArray">
+                        <td>{{percentage.key}}</td>
+                        <td>{{percentage.value}}%</td>
+                    </tr>
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,198 @@
+<mat-tab-group class="body">
+    <mat-tab label="This Week">
+        <div style="text-align: center;">
+            <h1 class="leaderboard-title">Leaderboards</h1>
+        </div>
+        <div class="leaderboard">
+            <div class="table-container">
+                <h2 class="leaderboard-h2">Completed Tours</h2>
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Completed Tours</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let element of completedToursCurrentWeekDisplayed"
+                            [ngClass]="{'current-user': userId == element.touristId}">
+                            <td>
+                                <div class="rank-container">
+                                    {{element.rank}}
+                                    <ng-container *ngIf="element.rank <= 3; else normalRank">
+                                        <span class="medal" [ngSwitch]="element.rank">
+                                            <mat-icon *ngSwitchCase="1" class="gold-medal">emoji_events</mat-icon>
+                                            <mat-icon *ngSwitchCase="2" class="silver-medal">emoji_events</mat-icon>
+                                            <mat-icon *ngSwitchCase="3" class="bronze-medal">emoji_events</mat-icon>
+                                        </span>
+                                    </ng-container>
+                                    <ng-template #normalRank></ng-template>
+                                    <mat-icon *ngIf="userId == element.touristId" class="user-icon"
+                                        matTooltip="You">person</mat-icon>
+                                </div>
+                            </td>
+                            <td>{{element.name}}</td>
+                            <td>{{element.surname}}</td>
+                            <td>{{element.completedTours}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="buttons-container">
+                    <button 
+                        [disabled]="completedToursCurrentWeekIndex == 0" 
+                        class="prev-button" 
+                        (click)="onPrevCompletedToursWeekly()">Prev</button>
+                    <button 
+                        [disabled]="completedToursCurrentWeekIndex >= completedToursCurrentWeek.length / 5 - 1"
+                        class="next-button" 
+                        (click)="onNextCompletedToursWeekly()">Next</button>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <h2 class="leaderboard-h2">Covered Distance</h2>
+                <div class="table-container">
+                    <table class="leaderboard-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Name</th>
+                                <th>Surname</th>
+                                <th>Covered Distance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let element of coveredDistancesCurrentWeekDisplayed"
+                                [ngClass]="{'current-user': userId == element.touristId}">
+                                <td>
+                                    <div class="rank-container">
+                                        {{element.rank}}
+                                        <ng-container *ngIf="element.rank <= 3; else normalRank">
+                                            <span class="medal" [ngSwitch]="element.rank">
+                                                <mat-icon *ngSwitchCase="1" class="gold-medal">emoji_events</mat-icon>
+                                                <mat-icon *ngSwitchCase="2" class="silver-medal">emoji_events</mat-icon>
+                                                <mat-icon *ngSwitchCase="3" class="bronze-medal">emoji_events</mat-icon>
+                                            </span>
+                                        </ng-container>
+                                        <ng-template #normalRank></ng-template>
+                                        <mat-icon *ngIf="userId == element.touristId" class="user-icon"
+                                            matTooltip="You">person</mat-icon>
+                                    </div>
+                                </td>
+                                <td>{{element.name}}</td>
+                                <td>{{element.surname}}</td>
+                                <td>{{element.coveredDistance | number:'1.0-2'}} km</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="buttons-container">
+                        <button 
+                            [disabled]="coveredDistaceCurrentWeekIndex == 0" 
+                            class="prev-button" 
+                            (click)="onPrevCoveredDistanceWeekly()">Prev</button>
+                        <button 
+                            [disabled]="coveredDistaceCurrentWeekIndex >= coveredDistancesCurrentWeek.length / 5 - 1"
+                            class="next-button" 
+                            (click)="onNextCoveredDistanceWeekly()">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 class="leaderboard-h1">Remaining time: {{weekCountdown}}</h1>
+    </mat-tab>
+    <mat-tab label="This Month">
+        <div style="text-align: center;">
+            <h1 class="leaderboard-title">Leaderboards</h1>
+        </div>
+        <div class="leaderboard">
+            <div class="table-container">
+                <h2 class="leaderboard-h2">Completed Tours</h2>
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Completed Tours</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let element of completedToursCurrentMonthDisplayed"
+                            [ngClass]="{'current-user': userId == element.touristId}">
+                            <td>
+                                <div class="rank-container">
+                                    {{element.rank}}
+                                    <ng-container *ngIf="element.rank <= 3; else normalRank">
+                                        <span class="medal" [ngSwitch]="element.rank">
+                                            <mat-icon *ngSwitchCase="1" class="gold-medal">emoji_events</mat-icon>
+                                            <mat-icon *ngSwitchCase="2" class="silver-medal">emoji_events</mat-icon>
+                                            <mat-icon *ngSwitchCase="3" class="bronze-medal">emoji_events</mat-icon>
+                                        </span>
+                                    </ng-container>
+                                    <ng-template #normalRank></ng-template>
+                                    <mat-icon *ngIf="userId == element.touristId" class="user-icon"
+                                        matTooltip="You">person</mat-icon>
+                                </div>
+                            </td>
+                            <td>{{element.name}}</td>
+                            <td>{{element.surname}}</td>
+                            <td>{{element.completedTours}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="buttons-container">
+                    <button [disabled]="completedToursCurrentMonthIndex == 0" class="prev-button"
+                        (click)="onPrevCompletedToursMonthly()">Prev</button>
+                    <button [disabled]="completedToursCurrentMonthIndex >= completedToursCurrentMonth.length / 5 - 1"
+                        class="next-button" (click)="onNextCompletedToursMonthly()">Next</button>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <h2 class="leaderboard-h2">Covered Distance</h2>
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Covered Distance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let element of coveredDistancesCurrentMonthDisplayed"
+                            [ngClass]="{'current-user': userId == element.touristId}">
+                            <td>
+                                <div class="rank-container">
+                                    {{element.rank}}
+                                    <ng-container *ngIf="element.rank <= 3; else normalRank">
+                                        <span class="medal" [ngSwitch]="element.rank">
+                                            <mat-icon *ngSwitchCase="1" class="gold-medal">emoji_events</mat-icon>
+                                            <mat-icon *ngSwitchCase="2" class="silver-medal">emoji_events</mat-icon>
+                                            <mat-icon *ngSwitchCase="3" class="bronze-medal">emoji_events</mat-icon>
+                                        </span>
+                                    </ng-container>
+                                    <ng-template #normalRank></ng-template>
+                                    <mat-icon *ngIf="userId == element.touristId" class="user-icon"
+                                        matTooltip="You">person</mat-icon>
+                                </div>
+                            </td>
+                            <td>{{element.name}}</td>
+                            <td>{{element.surname}}</td>
+                            <td>{{element.coveredDistance | number:'1.0-2'}} km</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="buttons-container">
+                    <button [disabled]="coveredDistaceCurrentMonthIndex == 0" class="prev-button"
+                        (click)="onPrevCoveredDistanceMonthly()">Prev</button>
+                    <button [disabled]="coveredDistaceCurrentMonthIndex >= coveredDistancesCurrentMonth.length / 5 - 1"
+                        class="next-button" (click)="onNextCoveredDistanceMonthly()">Next</button>
+                </div>
+            </div>
+        </div>
+        <h1 class="leaderboard-h1">Remaining time: {{monthCountdown}}</h1>
+    </mat-tab>
+</mat-tab-group>

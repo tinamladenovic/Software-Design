@@ -1,0 +1,67 @@
+.main-container
+{
+    display: flex;
+    justify-content: center;
+}
+.bundles-overview
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    width: 80%;
+}
+.bundle
+{
+  margin: 0.25rem;
+  margin-top: 1rem;
+  width: 15rem;
+}
+mat-card-content
+{
+    margin-top: 0.5rem;
+}
+mat-divider
+{
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+mat-card:hover
+{    transition: all .2s ;
+    background-color: #f7f7f7;
+}
+mat-card-actions
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.buy-button 
+{
+    margin-top: 0.5rem;
+    width: 8rem;
+    transition: all .2s;
+}
+.buy-button:hover 
+{
+    background-color: #FAF8F3;
+    color: #315149;
+}
+.price 
+{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.p-price
+{
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 15px;
+}
+mat-card-title
+{
+    font-size: 22px;
+}

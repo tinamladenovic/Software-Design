@@ -1,0 +1,49 @@
+<div class="user-dialog">
+  <h2 mat-dialog-title>User Details</h2>
+  <div class="user-info">
+    <p><strong>User name:</strong> {{ data.user.username }}</p>
+    <p><strong>Name:</strong> {{ profile.name }}</p>
+    <p><strong>Last name:</strong> {{ profile.surname }}</p>
+    <p><strong>Email:</strong> {{ profile.email }}</p>
+    <p *ngIf="data.user.role === 2">
+      <strong>Wallet balance:</strong> {{ wallet.adventureCoins }}
+    </p>
+    <br />
+  </div>
+  <div
+    *ngIf="data.user.role === 2 && data.user.isActive === true"
+    class="centered-container"
+  >
+    <p><strong>Add coins:</strong></p>
+    <form [formGroup]="coinsForm" class="wide-form">
+      <mat-form-field>
+        <input
+          matInput
+          type="number"
+          id="coinsInput"
+          formControlName="coinsToAdd"
+        />
+      </mat-form-field>
+    </form>
+    <button mat-button class="add-coins-button" (click)="addCoins()">
+      Add coins
+    </button>
+  </div>
+  <div class="centered-container" *ngIf="data.user.isActive === true">
+    <p><strong>Block user:</strong></p>
+    <div mat-dialog-actions class="block-button-container">
+      <button
+        class="block-button"
+        mat-icon-button
+        matTooltip="Edit"
+        (click)="blockUser(data.user.id)"
+      >
+        <mat-icon>block</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button  class="btn-primary close-button" (click)="onClose()">Close</button>
+  </div>
+  <div toastContainer></div>
+</div>

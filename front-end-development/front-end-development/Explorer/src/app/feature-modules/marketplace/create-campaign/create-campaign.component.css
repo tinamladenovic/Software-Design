@@ -1,0 +1,94 @@
+.create-campaign-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 90vh;
+    margin-top: 2rem;
+}
+
+.campaign-tours{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #FAF8F3;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.all-tours{
+    overflow-y: scroll;
+    max-height: 65vh;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 80%;
+}
+
+.checkbox{
+    background-color: #315149;
+    border-radius: 10px;
+    margin: 0.5%;
+    color: white;
+    padding: 10px;
+    width: 70px;
+    font-weight: 500;
+}
+
+
+h1{
+    color: #315149;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+.name-input{
+    align-self: center;
+    
+}
+
+.name-input input{
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 25px;
+    height: 40px;
+    min-width: 300px;
+    font-size: 18px;
+    background-color: whitesmoke;
+    border: 1px solid darkgray;
+}
+
+.create-form{
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.description{
+    padding-left: 20px;
+}
+
+.create-button{
+    background-color: #315149;
+    color: white;
+    padding: 15px;
+    border-radius: 25px;
+    margin: 5px;
+    margin-left: 10px;
+    border: 0px;
+    font-size: 18px;
+    &:hover{
+        cursor: pointer;
+    }
+    &:disabled{
+        background-color: lightgray;
+        cursor: auto;
+    }
+}

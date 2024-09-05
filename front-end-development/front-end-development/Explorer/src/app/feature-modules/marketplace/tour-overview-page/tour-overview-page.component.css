@@ -1,0 +1,144 @@
+.tour-overview-main-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 80%;
+  margin: auto;
+  margin-top: 2.5rem;
+  font-family: 'Montserrat';
+  justify-content: center;
+}
+.tour-overview-right
+{
+    margin-left: 1.5rem;
+    width: 80%;
+}
+.mat-mdc-standard-chip {
+    --mdc-chip-label-text-color: #fff;
+    height: 30px;
+    width: fit-content;
+    font-size: 14px;
+    margin-right: 2.5px;
+}
+.mat-mdc-standard-chip.easy-chip {
+    background-color: #6be288;
+  }
+  
+.mat-mdc-standard-chip.medium-chip {
+    background-color: #FACE35;
+}
+
+.mat-mdc-standard-chip.hard-chip {
+    background-color: #fc6969;
+}
+.tour-overview-p
+{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+.tour-overview-difficulty-div, .tour-overview-tags-div
+{
+    margin-top: 1rem;
+}
+.tour-overview-name-rate
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.tour-overview-h1
+{
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+}
+.stats-container
+{
+    display: flex;
+    align-items: center;
+}
+.tour-overview-p.price
+{
+    font-size: 20px;
+    color: #315149;
+    font-weight: bold;
+}
+.tour-overview-mat-chip
+{
+    margin-top: 0.5rem;
+}
+.tour-overview-p.tags
+{
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+.tour-overview-p.distance
+{
+    margin-left: 1rem;
+    font-weight: bold;
+}
+.tour-overview-p.checkpoints
+{
+    font-weight: bold;
+    margin-top:0.8rem;
+    margin-bottom: 0.25rem;
+}
+.tour-overview-p.checkpoint
+{
+    margin-top:0.5rem;
+    margin-bottom: 0.25rem;
+    margin-left: 1rem;
+}
+
+.tour-overview-p.difficulty 
+{
+    font-weight: bold;
+}
+.tour-overview-right-under
+{
+    margin-top: 1.5rem;
+}
+.tour-overview-add-to-cart
+{
+    margin-top: 2rem;
+    width: 200px;
+}
+.tour-overview-bundle-info
+{
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+}
+.tour-overview-bundle-price-p
+{
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+    color:rgb(245, 78, 78);
+    font-weight: bolder;
+}
+.tour-overview-tour-name-h2
+{
+    margin: 0;
+    padding: 0;
+    font-size:22px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.tour-overview-tour-name-p
+{
+    margin: 0;
+    padding: 0;
+    margin-right: 5px;
+}
+.tour-overview-bundle-tour
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

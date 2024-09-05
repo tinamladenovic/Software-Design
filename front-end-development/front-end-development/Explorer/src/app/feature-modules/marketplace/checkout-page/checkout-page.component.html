@@ -1,0 +1,61 @@
+<div class = "main-container">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <div class = "left-panel">
+        <h1>GRUPA 7</h1>
+        <div class = "navigation">
+            <p class = "p-navigation" (click)="goToCart()">Shopping Cart</p>
+            <i class="material-icons">arrow_forward_ios</i>
+            <p class = "p-navigation">Checkout</p>
+        </div>
+        <div class = "express-checkout">
+            <button mat-raised-button color="primary" class = "express-button">Shop Pay</button>
+            <button mat-raised-button color="primary" class = "express-button">Amazon Pay</button>
+            <button mat-raised-button color="primary" class = "express-button">Apple Pay</button>
+            <button mat-raised-button color="primary" class = "express-button">PayPal</button>
+        </div>
+        <div class = "create-order-div">
+            <button mat-raised-button color="primary" class = "create-order-button" (click)="createOrder()">Buy</button>
+        </div>
+    </div>
+    <div class = "right-panel">
+        <div class = "cart-items">
+            <ng-container class = "tour-checkout-ng-container" *ngFor="let item of items">
+                <xp-tour-display-checkout [item]="item"></xp-tour-display-checkout>
+            </ng-container>
+        </div>
+        <h4 class = "h4-bundles" *ngIf="bundleItems && bundleItems.length>0">Bundles</h4>
+        <div class = "cart-items">
+            <ng-container class = "tour-checkout-ng-container" *ngFor="let item of bundleItems">
+                <xp-tour-bundle-checkpoint-display [bundleItem]="item"></xp-tour-bundle-checkpoint-display>
+            </ng-container>
+        </div>
+        
+        
+        <hr class = "right-panel-line">
+        <div class = "enter-coupon-div">
+            <mat-form-field appearance="outline" size="medium">
+                <mat-label>Coupone code</mat-label>
+                <input matInput type="text" placeholder="Enter coupon code" [(ngModel)]="couponCode">
+            </mat-form-field>
+            <button mat-raised-button color="primary" class = "apply-coupon-button" (click)="applyCoupon()">Apply</button>
+        </div>
+        <hr class = "right-panel-line">
+        <div class = "subtotal-price" *ngIf="!couponApplied">
+            <h5>Subtotal</h5>
+            <h4>€{{subtotalPrice}}</h4>
+        </div>
+        <div class = "subtotal-price" *ngIf="couponApplied">
+            <h5>Subtotal</h5>
+            <h4>€{{oldSubtotal}}</h4>
+        </div>
+        <div class = "subtotal-price" *ngIf="couponApplied">
+            <h5>Discount</h5>
+            <h4 style="color:rgb(206, 84, 84)"> €{{oldSubtotal-subtotalPrice}}</h4>
+        </div>
+        <hr class = "right-panel-line">
+        <div class = "subtotal-price">
+            <h3>Total</h3>
+            <h3>€{{totalPrice}}</h3>
+        </div>
+    </div>
+</div>

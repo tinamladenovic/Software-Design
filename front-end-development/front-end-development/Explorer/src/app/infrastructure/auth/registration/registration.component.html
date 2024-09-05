@@ -1,0 +1,28 @@
+<div  class="registration-background">
+    <form [formGroup]="registrationForm" (ngSubmit)="register()">
+        <div>
+            
+                <label>Name</label>
+                <input formControlName="name" type="text"/>        
+                <label>Surname</label>
+                <input formControlName="surname" type="text"/>        
+                <label>Username</label>
+                <input formControlName="username" type="text"/>        
+                <label>Email</label>
+                <input formControlName="email" type="text"/>        
+                <label>Password</label>
+                <input formControlName="password" type="password"/>    
+                <label>Tags</label>
+                <select formControlName = "tags" reqired formControlName = "role">
+                    <option [value]="1">Author</option>
+                    <option [value]="2">Tourist</option>
+                </select>
+                <button type="submit" class="btn-login" [disabled]="isDisabled">
+                    <span *ngIf="!isDisabled">Register</span>
+                    <mat-spinner *ngIf="isDisabled" style="height: 20px;"></mat-spinner>
+                </button>
+
+        </div>
+    </form>
+    <div toastContainer></div>
+    </div>

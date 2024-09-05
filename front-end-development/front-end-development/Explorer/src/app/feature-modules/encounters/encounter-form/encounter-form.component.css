@@ -1,0 +1,24 @@
+.main-container
+{
+    margin-left: 30px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    width: 900px;
+}
+
+.app-map {
+    width: 65%;
+  }
+
+.form-container {
+    width: 35%;
+    display:flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.mat-icon {
+    vertical-align: middle;
+}

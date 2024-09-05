@@ -1,0 +1,127 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  margin-bottom: 2rem;
+  background-color: #FAF8F3;
+}
+
+app-map {
+  width: 70%;
+  margin-top: 30px;
+}
+
+button {
+  color: white;
+  transition: background-color 0.5s ease, transform 0.4s ease;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  font-size: large;
+  width: 270px;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button.encounter-finished {
+  background-color: #315149;
+}
+
+button.encounter-finished:hover {
+  background-color: #3c6359;
+}
+
+button.abandon-encounter {
+  background-color: #580303e0; 
+}
+
+button.abandon-encounter:hover {
+  background-color: #690b0b; 
+}
+
+.active-encounter-info {
+  background: linear-gradient(to right, #f0f0f0, #ffffff);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  width: 70%;
+  text-align: center;
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.19), 0px 6px 6px rgba(0,0,0,0.23);
+  transition: box-shadow 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.active-encounter-info:hover {
+  box-shadow: 0px 14px 28px rgba(0,0,0,0.25), 0px 10px 10px rgba(0,0,0,0.22);
+}
+
+.active-encounter-info h2{
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: semi-bold;
+}
+
+.active-encounter-info h3{
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  text-decoration: underline;
+  font-weight: semi-bold;
+}
+
+.active-encounter-info h2, .active-encounter-info h3, .active-encounter-info p {
+  color: #333; /* Dark grey color */
+}
+
+.active-encounter-info p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.active-encounter-info img {
+  border-radius: 10px;
+  width: 300px;
+  max-height: 200px;
+  transition: transform 0.3s ease;
+}
+
+.active-encounter-info img:hover {
+  transform: scale(1.1);
+}
+
+.encounter-type-selection {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.encounter-type-selection label {
+  margin-right: 50px;
+  color: #333;
+}
+
+.encounter-type-selection input {
+  margin-right: 5px;
+}
+
+.encounter-type-selection input:hover {
+  cursor: pointer;
+}
+
+.encounter-type-title {
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none; /* Remove the default underline */
+  font-size: 1.8rem;
+  margin-top: 30px;
+  color: #315149;
+  /* Create a custom underline */
+  background-image: linear-gradient(#315149, #315149);
+  background-repeat: no-repeat;
+  background-position: 0 100%; /* Position the underline at the bottom of the text */
+  background-size: 100% 3px; /* Width and height of the underline */
+  padding-bottom: 5px; /* Distance between the text and the underline */
+}

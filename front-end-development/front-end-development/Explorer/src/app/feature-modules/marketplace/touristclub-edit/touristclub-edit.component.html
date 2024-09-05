@@ -1,0 +1,17 @@
+<div class="club-edit-container" *ngIf="isEditMode">
+    <button class="iconbutton " 
+    mat-stroked-button 
+    type="submit" color="primary" (click) = "goBack()">back</button>
+    <form (ngSubmit)="submitChanges()">
+        <mat-form-field>
+            <mat-label>Club Name</mat-label>
+            <input matInput="text" [(ngModel)]="touristClub.clubName" name="editedClubName">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <textarea matInput="text" [(ngModel)]="touristClub.description" name="editedDescription" cdkTextareaAutosize
+                cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
+        </mat-form-field>
+        <button mat-raised-button type="submit" color="primary">Submit Changes</button>
+    </form>
+</div>

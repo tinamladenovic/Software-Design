@@ -1,0 +1,100 @@
+<div class="main-container">
+    <div class="createForm" >
+        <div class="createContainer">
+            
+            <h1>Create tour</h1><hr>
+            <form class="example-form" [formGroup] = "tourForm">
+                <div class="row">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Tour name</mat-label>
+                        <input matInput formControlName = "name">
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Description</mat-label>
+                        <textarea matInput formControlName = "description"></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Difficult</mat-label>
+                        <select matNativeControl required formControlName = "difficult">
+                        <option value="0">Easy</option>
+                        <option value="1">Medium</option>
+                        <option value="2">Hard</option>
+                        </select>
+                    </mat-form-field>
+                </div>
+            
+                <div class="row">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Tags</mat-label>
+                        <mat-select formControlName = "tags" multiple formControlName = "tags">
+                        <mat-option *ngFor="let tag of allTags.sort()" [value]="tag">{{tag}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                
+                <div class="buttons">
+                    <button mat-raised-button color="primary" type="submit" class="submitContainer" (click) = "saveAndContinueLater()">Save and continue later</button>
+                    <button mat-raised-button color="primary" type="submit" class="submitContainer" (click) = "goToNextPage()" [disabled] = "!isFormFull">Next step</button>
+                </div>
+                    
+                
+                
+                
+                
+            </form>
+        </div>
+
+        <!-- <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of equipment">
+                    <td>{{ e.name }}</td>
+                    <td>{{ e.description }}</td>
+                    <button (click)="deleteEquipment(e)">Delete</button>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="showAddEquipmentForm">
+            <form [formGroup]="equipmentForm">
+                <div>
+                    <mat-form-field>
+                        <mat-label>Name</mat-label>
+                        <input matInput formControlName="name" type="text"/>
+                    </mat-form-field>
+                    <mat-form-field>
+                    <mat-label>Description</mat-label>
+                    <textarea matInput
+                    cdkTextareaAutosize
+                    cdkAutosizeMinRows="1"
+                    formControlName="description"
+                    cdkAutosizeMaxRows="5"></textarea>
+                    </mat-form-field>
+                <button  color="primary" type="submit" (click)="addEquipment()" mat-raised-button>Done</button>
+                </div>
+            </form>
+        </div> -->
+
+        
+    </div>
+
+    <!-- <div *ngFor = "let tour of tours">
+        <xp-author-tour
+            [tour] = tour 
+            (showEquipments) = "manageEquipment($event)"
+            (addEquipment) = "addEquipmentClick($event)">
+        ></xp-author-tour>
+       
+    </div> -->
+    
+
+</div>

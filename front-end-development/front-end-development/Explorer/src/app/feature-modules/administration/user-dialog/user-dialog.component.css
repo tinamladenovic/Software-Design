@@ -1,0 +1,80 @@
+.user-dialog {
+  text-align: center;
+}
+.user-info {
+  margin-top: 5%;
+  font-family: "Arial", sans-serif;
+  font-size: 150%;
+}
+h2 {
+  text-align: center;
+  font-size: 300% !important;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  color: #315149;
+  font-family: "Arial", sans-serif !important;
+}
+
+.centered-container {
+  display: flex;
+  flex-direction: column; /* Postavljamo flex-direction na column */
+  align-items: center;
+  margin-bottom: 5%;
+  font-family: "Arial", sans-serif;
+  font-size: 150%;
+}
+.block-container {
+  display: flex;
+  flex-direction: column; /* Postavljamo flex-direction na column */
+  align-items: center;
+}
+
+.add-coins-button {
+  background-color: #315149 !important;
+  padding: 10px;
+  font-size: 25px;
+  height: 150%;
+  transition: background-color 0.3s ease;
+  color: #ffffff !important;
+}
+
+.add-coins-button:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.block-button {
+  background-color: red;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.block-button:hover {
+  background-color: #c2185b;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.close-button {
+  background-color: #315149;
+  color: #ffffff !important;
+  font-size: 100%;
+  width: 90%;
+  margin-bottom: .7rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.close-button:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.wide-form {
+  width: 100%; /* Postavite širinu prema vašim potrebama */
+}
+
+/* Ako želite promeniti širinu samo input polja unutar te klase */
+.wide-form mat-form-field {
+  width: 50%; /* Postavite širinu prema vašim potrebama */
+}

@@ -1,0 +1,34 @@
+<div class="single-campaign">
+    <div class="campaign-header">
+        {{compositeTour.name}}
+    </div>
+    <div class="checkpoints-container">
+        <h2>Tours : </h2>
+        <div *ngFor="let tour of compositeTour.tours" >
+            <div class="checkpoint">
+                {{tour.name}}
+            </div> 
+        </div>
+    </div>
+    <div class="checkpoints-container">
+        <h2>Checkpoints : </h2>
+        <div *ngFor="let checkpoint of compositeTour.checkpoints" >
+            <div class="checkpoint">
+                {{checkpoint.name}}
+            </div> 
+        </div>
+    </div>
+    <div class="checkpoints-container">
+        <h2>Equipments : </h2>
+        <div *ngFor="let equipment of compositeTour.equipments" >
+            <div class="checkpoint">
+                {{equipment.name}}
+            </div>
+        </div>
+    </div>
+    <div class="value">Distance : {{compositeTour.distance}}km</div>
+    <div class="value" >Difficulty : {{transformDifficult(compositeTour.difficult)}}</div>
+    <div class="start-tour">
+        <button (click)="startClick()">Execute tour</button>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+.tour-recommended-card-div {
+  width: 20rem;
+  display: flex;
+  height: 550px;
+}
+.recommended-tour-card {
+  width: 24rem;
+  height: fit-content;
+  padding: 5px;
+  height: 530px;
+}
+.recommended-tour-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.desc {
+  height: 35px;
+}
+.price-distance {
+  display: flex;
+  flex-direction: row;
+}
+.card-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+}
+h3 {
+  margin: 0;
+  padding: 0;
+  align-self: center;
+  font-size: 125%;
+}
+.tags {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  align-self: center;
+}
+::ng-deep .mat-mdc-chip {
+  width: fit-content;
+  font-size: 14px;
+  margin: 3px;
+}
+.image-slider-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+mat-card-content {
+  margin-bottom: 20px;
+}
+.mat-mdc-card-header {
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.recommended-tour-header {
+  display: flex;
+}
+
+.header-content {
+  display: flex;
+  /* Align items vertically in the center */
+}
+
+.tour-name {
+  margin: 0;
+  padding: 0;
+}
+.mat-mdc-standard-chip {
+  --mdc-chip-label-text-color: #fff;
+  height: 28px;
+  width: fit-content;
+  font-size: 12px;
+}
+
+.price-distance {
+  margin: 5px;
+}
+.mat-mdc-standard-chip.easy-chip {
+  background-color: #6be288;
+}
+
+.mat-mdc-standard-chip.medium-chip {
+  background-color: #face35;
+}
+
+.mat-mdc-standard-chip.hard-chip {
+  background-color: #fc6969;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 15px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.tour-stats {
+  margin-left: 5px;
+  font-size: 110%;
+  font-weight: normal;
+}

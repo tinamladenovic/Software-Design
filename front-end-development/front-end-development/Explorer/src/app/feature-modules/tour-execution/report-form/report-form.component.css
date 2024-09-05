@@ -1,0 +1,44 @@
+
+.main-container {
+    width: 100%;
+    background-color:#FAF8F3;
+    /* background-image: linear-gradient(to right bottom, rgba(49, 81, 73, 0.9), rgba(250, 248, 243, 0.5));
+    background-size: cover;
+    background-position: top; */
+    position: relative;
+    height: 94vh;
+    color: white;
+  }
+
+
+h1{
+    margin-left: 5.5rem;
+    color: black;
+}
+hr{
+    margin-top: -1.5rem;
+    width: 60%;
+}
+
+div {
+ 
+    width: 400px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+
+.issueReport {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-60%);
+
+    border: 1px solid #77777760;
+    margin-top: 3rem;
+      background-color: #f7f7f7;
+      padding: 2.5rem;
+      border-radius: .75rem;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}

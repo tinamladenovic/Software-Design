@@ -1,0 +1,160 @@
+.followers-container {
+    width: 30rem;
+    height: 45rem;
+    background-color: #fff;
+    border-radius: .45rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    align-items: center;
+    padding: .1rem;
+}
+
+.button-container {
+    margin-top: .1rem;
+    margin-bottom: .1rem;
+}
+
+.button-container button {
+    padding: 0.5rem 5.53rem;
+    border: none;
+    border-radius: .45rem;
+    cursor: pointer;
+    margin: 0 0.2rem;
+}
+
+.button-container button.active {
+    background-color: #333;
+    color: #fff;
+}
+
+.followers-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.follower {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-size: 1rem;
+    padding: .5rem;
+    margin: 0.5rem;
+    border-radius: .45rem;
+    transition: all .5s;
+}
+
+.follower:hover {
+    background-color: #dddddd;
+}
+
+.btn-in {
+    border-radius: .45rem;
+    font-size: .9rem;
+    border: none;
+    padding: .5rem;
+    transition: all .25s;
+    font-weight: bold;
+    color: #333;
+    background-color: #cecece;
+    margin-left: 4rem;
+}
+
+.btn-in:hover {
+    background-color: #315149;
+    color: #fff;
+}
+
+.btn-message {
+    border-radius: .45rem;
+    font-size: .9rem;
+    height: 1.9rem;
+    margin-left: .45rem;
+    border: none;
+    transition: all .25s;
+    font-weight: bold;
+    color: #333;
+    background-color: #cecece;
+}
+.btn-message:hover {
+    background-color: #315149;
+    color: #fff;
+}
+
+.btn-send {
+    border-radius: .45rem;
+    font-size: .9rem;
+    border: none;
+    padding: .5rem;
+    transition: all .25s;
+    font-weight: bold;
+    color: #333;
+    background-color: #cecece;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.btn-send:hover {
+    background-color: #315149;
+    color: #fff;
+}
+
+.btn-close {
+    margin-left: 1rem;
+    border-radius: .45rem;
+    font-size: .9rem;
+    border: none;
+    padding: .5rem;
+    transition: all .25s;
+    font-weight: bold;
+    color: #333;
+    background-color: #cecece;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.btn-close:hover {
+    background-color: #d66060;
+    color: #fff;
+}
+
+
+.input-container {
+    padding: 3.5rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+}
+
+  .input-container.show-input {
+    opacity: 1;
+  }
+  
+  .input-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+
+  .show-input {
+    display: block;
+  }
+  
+  .hide-input {
+    display: none;
+  }
+  

@@ -1,0 +1,80 @@
+<div class="container">
+
+  <!-- <div class="avgRating">
+      <strong>Average Rating:</strong>
+      {{ calculateAverageRating(tourRatings) | number:'1.2-2' }}
+  </div> -->
+
+<!-- <div class="tour-execution-info">
+  <p>Completion Percentage: {{ (tourProgressService.completionPercentage$ | async) || 0 }}%</p>
+  <p>Last Activity: {{ getCurrentDateTime() | date:'medium' }}</p>
+</div> -->
+
+<div *ngIf="(tourProgressService.completionPercentage$ | async) !== null && 
+            (tourProgressService.completionPercentage$ | async) !== undefined && 
+            ((tourProgressService.completionPercentage$ | async) ?? 0) > 35">
+  <form (submit)="addReview()">
+    <div class="form-group">
+      <label for="ratingInput">Rating:</label>
+      <select id="ratingInput" name="ratingInput" [(ngModel)]="newReview.rating" required>
+        <option *ngFor="let i of [1, 2, 3, 4, 5]" [value]="i">{{ i }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="commentInput">Comment:</label>
+      <textarea id="commentInput" name="commentInput" [(ngModel)]="newReview.comment"></textarea>
+    </div>
+    
+    <button type="submit">Add Review</button>
+  </form>
+</div>
+
+<!-- Tour Rating Component HTML with Average Rating Calculation
+<table class="tour-rating-table">
+  <thead>
+    <tr>
+      <th>Tour ID</th>
+      <th>Tourist ID</th>
+      <th>Rating</th>
+      <th>Review</th>
+      <th>Created</th>
+      <th>Completion Percentage</th>
+      <th>Last Activity</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let rating of tourRatings; let index = index">
+      <td>{{ rating.tourId }}</td>
+      <td>{{ rating.touristId }}</td>
+      <td>{{ rating.rating }}</td>
+      <td>{{ rating.review }}</td>
+      <td>{{ rating.created | date:'medium' }}</td>
+      <td>{{ rating.completionPercentage || (tourProgressService.completionPercentage$ | async) }}</td>
+      <td>{{ rating.lastActivity | date:'medium' }}</td>
+      <td>
+
+      </td>
+    </tr>
+    
+    <tr *ngIf="isEditing[index]">
+      <td colspan="8">
+        <form (submit)="saveEdit(index)">
+          <div class="form-group">
+            <label for="editedRating">Rating:</label>
+            <select id="editedRating" name="editedRating" [(ngModel)]="tourRatings[index].rating" required>
+              <option *ngFor="let j of [1, 2, 3, 4, 5]" [value]="j">{{ j }}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="editedComment">Comment:</label>
+            <textarea id="editedComment" name="editedComment" [(ngModel)]="tourRatings[index].review"></textarea>
+          </div>
+          <button type="submit">Save Review</button>
+        </form>
+      </td>
+    </tr>
+  </tbody>
+</table> -->
+</div>

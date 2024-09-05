@@ -1,0 +1,101 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header-container{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+    background: #FAF8F3;
+    padding-bottom: 20px;
+}
+
+
+
+.profile-picture{
+    height: 100%;
+}
+
+.picture-container{
+    height: 70%;
+    background-color: #315149;
+    border-radius: 100%;
+    margin: 10px;
+}
+
+.name-container{
+    display: flex;
+    align-items: center;
+    color: black;
+    font-size: 36px;
+    
+}
+
+.tour-container{
+    height: 70%;
+    flex: 2;
+    padding: 5%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.single-tour{
+    display: flex;
+    flex-direction: column;
+    width: 31%;
+    background-color: #B2A083;
+    margin: 1%;
+    border-radius: 20px;
+    color: FAF8F3;
+    &:hover{
+        transform: scale(1.05);
+        cursor: auto;
+    }
+}
+
+.single-tour-header{
+    background-color: #B2A083;
+    border-radius: 10px 10px 0px 0px;
+    padding: 3%;
+    color: FAF8F3;
+    font-size: 36px;
+    font-variant: small-caps;
+    font-family: Georgia;
+    line-height: 1;
+}
+
+.price-container{
+    background-color: #315149;
+    padding: 3%;
+    margin-top: auto;
+    border-radius: 10px 0px 10px 0px;
+    font-size: 36px;
+    color: white;
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+
+.tour-caracteristics{
+    padding: 2%;
+    font-size: 18px;
+    font-family: Tahoma;
+}
+
+.caracteristic{
+    margin-bottom: 10px;
+
+}
+
+.no-tours{
+    justify-self: center;
+    align-self: center;
+    padding: 5%;
+    font-size: 24px;
+}

@@ -1,0 +1,132 @@
+.main-container
+{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+.left-panel
+{
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    border-right: 1px solid #7e7c7c;
+    padding-left: 18rem;
+    padding-right: 6rem;
+}
+.right-panel
+{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    background-color: #f5f5f5;
+    padding-right: 12rem;
+    padding-left: 8rem;
+}
+.navigation
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+i
+{
+    margin: 0;
+    margin-left:5px;
+    padding: 0;
+    font-size: 15px;
+    color: #666464;
+}
+.p-navigation
+{
+    font-size: 15px;
+    color: #7e7c7c;
+}
+.p-navigation:hover
+{
+    cursor: pointer;
+    color:#424242;
+}
+.express-checkout
+{
+    display: flex;
+    flex-direction: row;
+    padding:15px;
+    margin-top: 5px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 5px;
+    justify-content: center;
+}
+.express-button
+{
+    margin: 5px;
+}
+.enter-email-text
+{
+    font-family: 'Montserrat';
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.line {
+    flex-grow: 1; /* Allow the line to grow and take available space horizontally */
+    border: none;
+    border-top: 1px solid #969595; /* Set the border-top property for a horizontal line */
+}
+.create-order-button
+{
+    width: 15rem;
+}
+.create-order-div
+{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: right;
+}
+.right-panel-line
+{
+    width: 100%;
+    border: none;
+    border-top: 1px solid #afafaf;
+}
+.apply-coupon-button
+{
+    height: 55px;
+    margin-left: 10px;
+    width: 80px;
+}
+.items
+{
+    height: 0;
+}
+.enter-coupon-div
+{
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    margin-top: 18px;
+    width: 100%;
+}
+.subtotal-price
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+h3, h4, h5
+{
+    font-family: 'Montserrat';
+    color:#424242;
+}
+.cart-items
+{
+    margin-top: 20px;
+}
+.h4-bundles
+{
+    margin:0;
+    padding: 0;
+    margin-top:5px;
+}

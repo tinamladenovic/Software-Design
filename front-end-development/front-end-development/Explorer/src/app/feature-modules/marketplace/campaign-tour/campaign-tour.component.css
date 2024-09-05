@@ -1,0 +1,59 @@
+.campaign-tour-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #315149;
+    width: 50%;
+    margin-bottom: 5px;
+    padding: 1%;
+    border-radius: 10px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.buttons-container{
+    align-self: center; 
+}
+
+.add-button{
+    background-color: #FAF8F3;
+    color: #315149;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 5px;
+    border: 0px;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.remove-button{
+    background-color: #FAF8F3;
+    font-weight: 700;
+    color: #315149;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 5px;
+    border: 0px;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.tour-name{
+    color: #FAF8F3;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+}
+
+.description{
+    font-style: italic;
+    padding-left: 1rem;
+    padding-top: 2%;
+    font-size: 1rem;
+    color: #FAF8F3;
+}

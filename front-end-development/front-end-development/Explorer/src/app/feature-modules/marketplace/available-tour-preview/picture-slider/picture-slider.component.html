@@ -1,0 +1,24 @@
+<div class="image-container">
+  <button
+    mat-icon-button
+    color="primary"
+    class="nav-button prev"
+    (click)="prevImage()">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+  <img
+    [src]="images[currentImageIndex]"
+    alt="No"
+    class="image-with-button"
+    [style.width]="imageSize + 'px'"
+    [style.height]="imageSize2 ? imageSize2 + 'px' : 'auto'"
+    alt="No"
+  />
+  <button
+    mat-icon-button
+    color="primary"
+    class="nav-button next"
+    (click)="nextImage()">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</div>

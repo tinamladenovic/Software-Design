@@ -1,0 +1,39 @@
+<div *ngFor="let comment of comments; let i = index">
+  <mat-card class="comment-card">
+    <mat-card-header>
+      <img mat-card-avatar src="./assets/images/blog/user.png" />
+      <mat-card-title>{{ comment.author }}</mat-card-title>
+      <mat-card-subtitle>{{
+        this.formatTime(comment.creationTime)
+      }}</mat-card-subtitle>
+      <img
+        *ngIf="comment.userId === this.loggedUserId"
+        src="./assets/images/blog/edit-pic.png"
+        class="edit-button"
+        alt="Edit"
+        (click)="onEdit(i)"
+      />
+      <img
+        *ngIf="comment.userId === this.loggedUserId && editMode != i"
+        src="./assets/images/blog/delete-pic.png"
+        class="delete-button"
+        alt="Delete"
+        (click)="onDelete(comment)"
+      />
+    </mat-card-header>
+    <mat-card-content *ngIf="editMode != i">
+      <p>
+        {{ comment.context }}
+      </p>
+    </mat-card-content>
+    <mat-card-content *ngIf="editMode === i">
+      <textarea mat-input [(ngModel)]="editedCommentText" rows="4"></textarea>
+      <button (click)="saveEditedComment(comment)">Save</button>
+    </mat-card-content>
+    <mat-card-footer *ngIf="comment.creationTime != comment.lastUpdateTime">
+      <mat-card-subtitle
+        >Edited: {{ formatTime(comment.lastUpdateTime) }}</mat-card-subtitle
+      >
+    </mat-card-footer>
+  </mat-card>
+</div>

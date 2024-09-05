@@ -1,0 +1,14 @@
+<div class="review-container">
+    <div class="row">
+        <div class="column">
+            <p class="main-text">Pera Peric</p>
+            <p class="subheading">{{ review.timeOfComment | date }} </p>
+        </div>
+        <div>
+            <p title="Grade {{review.grade}} out of 5">{{ review.grade }} / 5 </p>
+        </div>
+
+    </div>
+    <p>{{ review.comment }} </p>
+
+</div>

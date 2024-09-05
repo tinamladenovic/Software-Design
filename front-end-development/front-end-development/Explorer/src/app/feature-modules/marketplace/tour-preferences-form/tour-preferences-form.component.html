@@ -1,0 +1,39 @@
+<form [formGroup]="tourPreferencesForm">
+    <div>
+        <mat-form-field >
+            <mat-label>Difficulty</mat-label>
+            <mat-select formControlName="tourDifficult">
+              <mat-option value="Easy">Easy</mat-option>
+              <mat-option value="Medium">Medium</mat-option>
+              <mat-option value="Hard">Hard</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        <mat-form-field >
+  <mat-label>Preferences</mat-label>
+  <mat-select formControlName="tourTravelMethod">
+    <mat-option value="Walking">Walking</mat-option>
+    <mat-option value="Bicycle">Bicycle</mat-option>
+    <mat-option value="Car">Car</mat-option>
+    <mat-option value="Boat">Boat</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+    <mat-label>Rating</mat-label>
+    <mat-select formControlName="rating">
+      <mat-option value="None">None</mat-option>
+      <mat-option value="Low">Low</mat-option>
+      <mat-option value="Moderate">Moderate</mat-option>
+      <mat-option value="High">High</mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+        <mat-form-field>
+            <mat-label>Tags</mat-label>
+            <input matInput formControlName="tags" type="text"/>
+        </mat-form-field>
+    <button *ngIf="!shouldEdit" color="primary" type="submit" (click)="addTourPreferences()" mat-raised-button>Done</button>
+    <button *ngIf="shouldEdit" color="primary" type="submit" (click)="updateTourPreferences()" mat-raised-button>Done</button>
+    </div>
+</form>

@@ -1,0 +1,79 @@
+<form [formGroup]="encounterForm" class="main-container">
+    <div class="form-container">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput="text" formControlName="name">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <textarea matInput="text" cdkTextareaAutosize cdkAutosizeMinRows="1" formControlName="description" cdkAutosizeMaxRows="5"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Longitude</mat-label>
+            <input matInput formControlName="longitude" type="number">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Latitude</mat-label>
+            <input matInput formControlName="latitude" type="number">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status">
+                <mat-option [value]=0>Active</mat-option>
+                <mat-option [value]=1>Draft</mat-option>
+                <mat-option *ngIf="shouldEdit" [value]=2>Archived</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Xp</mat-label>
+            <input matInput formControlName="xp" type="number">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Range</mat-label>
+            <input matInput formControlName="range" type="number">
+        </mat-form-field>
+
+        <mat-form-field *ngIf="checkpoint">
+            <mat-label>Is Required</mat-label>
+            <mat-select formControlName="isRequired">
+                <mat-option  [value]=false>No</mat-option>
+                <mat-option [value]=true>Yes</mat-option>
+            </mat-select>
+        </mat-form-field>
+        
+        <mat-form-field *ngIf="!shouldEdit">
+            <mat-label>Type</mat-label>
+            <mat-select formControlName="type" (selectionChange)="patchEncounterType($event.value)">
+                <mat-option [value]=0>Social</mat-option>
+                <mat-option [value]=1>Hidden location</mat-option>
+                <mat-option [value]=2>Misc</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field *ngIf="typeValue === 0">
+            <mat-label>Required people</mat-label>
+            <input matInput formControlName="socialEncounterRequiredPeople" type="number">
+        </mat-form-field>
+
+        <input *ngIf="typeValue === 1" 
+            type="file" #fileInput (change)="onFileSelected($event)" accept="image/*">
+            
+        <mat-form-field *ngIf="typeValue === 2">
+            <mat-label>Task</mat-label>
+            <input matInput="text" formControlName="miscEncounterTask">
+        </mat-form-field>
+
+        <button color="primary" type="submit" (click)="submitEncounter()"
+            mat-raised-button>Submit</button>
+
+        <button color="primary" type="submit" (click)="emitCloseForm()"
+            mat-raised-button>Close</button>
+    </div>
+    <app-map *ngIf="!checkpoint" class="app-map" (pinnedPlace)="onPinPlaced($event)"></app-map>
+</form>

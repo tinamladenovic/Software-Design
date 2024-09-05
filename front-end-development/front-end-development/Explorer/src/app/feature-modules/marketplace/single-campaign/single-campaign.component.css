@@ -1,0 +1,78 @@
+.single-campaign {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #000;
+    background-color: lightgray;
+    margin-top: 2%; 
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.2),
+    0 8px 16px rgba(0, 0, 0, 0.3);
+    width: 75%;
+    margin-left: 15.5rem;
+}
+
+.campaign-header{
+    font-size: 24px;
+    background-color: #315149;
+    padding: 1%;
+    color: #fff;
+    border-radius: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-weight: 500;
+}
+
+.checkpoints-container{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    align-items: center;
+    color: black;
+    flex-wrap: wrap;
+}
+
+.checkpoints-container h2{
+    margin: 0px;
+    padding: 0px;
+}
+
+.checkpoint{
+    display: inline-block;
+    background-color: #B2A083;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    color: black;
+}
+
+.value{
+    margin: 5px;
+    padding: 5px;
+    color: black;
+    font-size: 18px;
+}
+
+.start-tour{
+    align-self: flex-end;
+}
+
+.start-tour button{
+    background-color: #315149;
+    color: #fff;
+    margin: 5px;
+    margin-right: 7px;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 24px;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border: 0px;
+    transition: all .2s;
+    &:hover{
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+    
+}

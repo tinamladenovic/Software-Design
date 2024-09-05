@@ -1,0 +1,48 @@
+<div class="blog-container" *ngIf="blog | async as blogData">
+  <h2 class="blog-title">{{ blogData.name }}</h2>
+  <p class="blog-author">Created by: {{ blogData.author }}</p>
+
+  <markdown ngPreserveWhitespaces [data]="blogData.description"></markdown>
+  <div class="ratings-container">
+    <div class="blog-ratings">
+      <img
+        *ngIf="!userUpvoted"
+        src="./assets/images/blog/upvote.png"
+        (click)="upvote()"
+      />
+      <img
+        *ngIf="userUpvoted"
+        src="./assets/images/blog/upvote-fill.png"
+        (click)="removeUpvote()"
+      />
+      <p class="rating">Rating: {{ this.blogData.rating }}</p>
+      <img
+        *ngIf="!userDownvoted"
+        src="./assets/images/blog/downvote.png"
+        (click)="downvote()"
+      />
+      <img
+        *ngIf="userDownvoted"
+        src="./assets/images/blog/downvote-fill.png"
+        (click)="removeDownvote()"
+      />
+    </div>
+  </div>
+
+  <xp-comment-crud
+    *ngIf="!editForm && this.userRole === 'tourist'"
+    (commentAdded)="getBlogInfo()"
+  ></xp-comment-crud>
+  <xp-comment-edit
+    *ngIf="editForm"
+    (commentEdited)="getBlogInfo()"
+    [index]="this.commentEditingIndex"
+    [editedText]="this.comments[this.commentEditingIndex].context"
+    [blogId]="this.blogId"
+    [comment]="this.comments[this.commentEditingIndex]"
+  ></xp-comment-edit>
+  <xp-comment
+    [blog]="this.blogData"
+    (commentDeleted)="getBlogInfo()"
+  ></xp-comment>
+</div>

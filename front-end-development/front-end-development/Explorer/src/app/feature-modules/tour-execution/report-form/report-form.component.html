@@ -1,0 +1,33 @@
+<div class="main-container">
+
+<div class="issueReport">
+    <h1>Report an issue</h1>
+    <hr>
+<form [formGroup]="reportForm">
+    <div>
+        <mat-form-field>
+            <mat-label>Category</mat-label>
+            <input matInput formControlName="category" type="text">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Select priority</mat-label>
+            <mat-select formControlName="priority">
+                <mat-option value="0">High</mat-option>
+                <mat-option value="1">Medium</mat-option>
+                <mat-option value="2">Low</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <textarea matInput
+            cdkTextareaAutosize
+            cdkAutosizeMinRows="1"
+            formControlName="description"
+            cdkAutosizeMaxRows="5"></textarea>
+        </mat-form-field>
+        
+        <button mat-raised-button type="submit" color="primary" (click)="addReport()">Done</button>
+    </div>
+</form>
+</div>
+</div>

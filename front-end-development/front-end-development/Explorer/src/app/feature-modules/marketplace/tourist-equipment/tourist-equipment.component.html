@@ -1,0 +1,61 @@
+<div class="main-container">
+  <div class="table-container">
+      <div id="touristEquipment" class="table">
+        <p>My Equipment</p>
+        <hr>
+        <div id="touristEquipment-details">
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Descriprion</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let eq of touristEquipment">
+                  <td>{{ getEquipmentName(eq.equipmentId) }}</td>
+                  <td>{{ getEquipmentDescription(eq.equipmentId) }}</td>
+                  <td>
+                    <button color="accent" (click)="deleteEquipment(eq.id || 0)" color="accent" mat-icon-button>
+                      <mat-icon>delete_forever</mat-icon>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    
+      <div id="equipment" class="table">
+        <p>Equipment</p>
+        <hr>
+        <div id="equipment-details">
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let eq of allEquipment">
+                  <td>{{eq.name}}</td>
+                  <td>{{eq.description}}</td>
+                  <td>
+                    <button color="accent" (click)="onAddClicked(eq.id || 0)" mat-icon-button>
+                      <mat-icon>library_add</mat-icon>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

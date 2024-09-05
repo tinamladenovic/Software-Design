@@ -1,0 +1,40 @@
+<div class = "main-container">
+  <div class = "table-div">
+    <table mat-table [dataSource]="bundles" class="mat-elevation-z8">
+  
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Price </th>
+        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.status === 0 ? 'Draft' : (element.status === 1 ? 'Published' : 'Archived') }}
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="publish">
+        <th mat-header-cell *matHeaderCellDef> Publish Bundle</th>
+        <td mat-cell *matCellDef="let element"> <button mat-button (click)="publishTour(element.id)" [disabled]="element.status===1">Publish</button> </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="archieve">
+        <th mat-header-cell *matHeaderCellDef> Archive Bundle</th>
+        <td mat-cell *matCellDef="let element"> <button mat-button (click)="archieveTour(element)" >Archive</button> </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+    </table>
+  </div>
+</div>
+
+
+

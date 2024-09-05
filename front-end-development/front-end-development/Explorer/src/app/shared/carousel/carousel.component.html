@@ -1,0 +1,15 @@
+<div class="carousel-wrapper">
+    <ul class="carousel-inner" #carousel>
+      <li class="carousel-button" *ngIf="showControls">
+        <span (click)="change('previous')"><i class="fa fa-angle-left" style="font-size:24px"></i></span>
+      </li>
+      <li *ngFor="let item of items;" class="carousel-item">
+        <ng-container [ngTemplateOutlet]="item.tpl">
+        </ng-container>
+      </li>
+      <li class="carousel-button" *ngIf="showControls">
+        <span (click)="change('next')"><i class="fa fa-angle-right" style="font-size:24px"></i></span>
+      </li>
+    </ul>
+</div>
+   

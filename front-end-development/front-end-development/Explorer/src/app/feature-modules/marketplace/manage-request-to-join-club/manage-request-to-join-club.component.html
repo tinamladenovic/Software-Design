@@ -1,0 +1,37 @@
+ <div class="container" > 
+
+    <div class="row">
+        <h2 class="heading-secondary">Manage requests</h2>
+    </div>
+
+    <div style="margin-top: -25px; width: 100%;">
+        <hr>
+    </div>
+
+    <div class="row request-details">
+    <table>
+        <thead>
+            <tr>
+                <th>ID Request</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let req of requests">
+                <td>{{req.id}}</td>
+                <td>{{ getStatusDisplay(req.status) }}</td>
+                <td style="cursor: pointer;">
+                    <button color="primary" (click)="acceptRequest(req)" mat-icon-button>
+                        <mat-icon>check</mat-icon>
+                      </button>
+                      <button color="accent" (click)="declineRequest(req)" mat-icon-button>
+                        <mat-icon>cancel</mat-icon>
+                      </button>
+                </td>   
+            </tr>
+            <tr></tr>
+        </tbody>
+    </table>
+</div>
+</div>

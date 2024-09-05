@@ -1,0 +1,54 @@
+#um {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.user-management-container {
+  background-size: cover;
+  background-position: top;
+  height: 150vh;
+  color: #FFFFFF;
+}
+
+#title{
+  margin-bottom: 15px;
+  margin-top: 15px;
+  text-align: center;
+  font-weight: semibold;
+  font-size: 2rem;
+  color: #315149;
+}
+
+.mat-table-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  max-width: 1200px;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background-color: #FAF8F3;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+tr {
+  border-bottom: 1px solid #FAF8F3; /* Dodavanje linije između redova */
+}
+
+tr:hover {
+  background-color: #B2A083;
+  cursor: pointer;
+}

@@ -1,0 +1,53 @@
+.createForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.createContainer{
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+
+h1{
+    font-size: 36px;
+    padding: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-variant: small-caps;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    gap: 10px;
+    
+  }
+
+  .example-full-width {
+    width: 100%;
+  }
+
+  table{
+    border: 1px solid black;
+    margin: 20px;
+    border-collapse: collapse;
+  }
+
+th,tr,td{
+    border: solid black 1px;
+    padding: 10px;
+    border-collapse: collapse;
+  }
+
+th{
+    background-color: olivedrab;
+}
+
+.submitContainer{
+    align-self: center;
+}

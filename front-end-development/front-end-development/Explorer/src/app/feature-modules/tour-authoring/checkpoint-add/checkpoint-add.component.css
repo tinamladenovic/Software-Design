@@ -1,0 +1,139 @@
+app-map
+{
+    width: 50%;
+    margin-left: 13rem;
+    margin-top: 5rem;
+}
+
+.main-container
+{
+    display: flex;
+    flex-direction: column;
+}
+.second-container
+{
+    display: flex;
+    flex-direction: row;
+}
+.right-pannel
+{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+.add-checkpoint-form
+{
+    display: flex;
+    flex-direction: column;
+    margin-left: 4rem;
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.add-checkpoint-form button{
+    padding: 10px;
+    margin: 5px;
+}
+.checkpoints
+{
+    display: flex;
+    flex-direction: column;
+    margin-left: 4rem;
+    margin-top: 10px;
+    padding: 5px;
+    max-height: 200px; 
+    overflow-y: auto; 
+}
+.checkpoint
+{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    background-color: #d6d6d6;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 5px;
+
+
+}
+
+.checkpoint h3{
+    color: #315149;
+}
+
+
+.left
+{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+.right
+{
+    display: flex;
+    flex-direction: row;
+    margin-right: 15px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    justify-self: right;
+}
+p
+{
+    margin: 0;
+    padding: 0;
+}
+mat-icon
+{
+    margin: 0;
+    padding: 0;
+    margin-right: 10px;
+}
+
+.back-button-container{
+    margin-left: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.add-encounter-button{
+    padding: 5px;
+    border-radius: 10px;
+    border: 0px;
+    background-color: #315149;
+    color: white;
+    height: auto;
+    
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+}
+
+.file-input-container {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+
+  /* Style for the input */
+  .file-input {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+
+  /* Style for the custom button */
+  .custom-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 20px;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 10px;
+  }

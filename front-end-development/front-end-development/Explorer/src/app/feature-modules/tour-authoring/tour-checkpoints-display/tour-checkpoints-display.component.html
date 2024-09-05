@@ -1,0 +1,22 @@
+<div class="page-container">
+    <div class="main-container">
+        <div  class="checkpoints-container">
+            <h1 *ngIf="isCheckpointsArrayEmpty">You have not selected any checkpoints</h1>
+            <ng-container *ngFor = "let checkpoint of tourCheckpoints">
+                <xp-tour-checkpoint 
+                    [checkpoint] = checkpoint
+                    (removeCheckpoint) = "removeCheckpoint($event)"
+                ></xp-tour-checkpoint>
+            </ng-container>
+        </div>
+
+        <div class="add-button-container">
+            <button class="add-button" (click) = "addCheckpoint()">Add/Remove checkpoint</button>
+        </div>
+        
+        <div class="navigation-buttons-container">
+            <button class="nav-btn" (click) = "saveForLater()">Save and continue later</button>
+            <button class="nav-btn" [disabled] = "!isNextButtonEnabled" (click) = "goToNextPage()">Next step</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-with-buttons {
+  display: block;
+  width: 85%;
+  height: 100px;
+  margin: 0;
+  position: absolute;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%);
+  padding: 10px;
+  font-weight: 500;
+  font-size: 36px; 
+  color: white; 
+  /* font-weight: 500;
+  font-size: 36px;
+  background-color: transparent;
+  color: #fff; /* Text color on the button */
+  /* border: none;
+  cursor: pointer; */
+}
+
+.nav-button.prev {
+  left: 10px;
+}
+
+.nav-button.next {
+  right: 10px;
+}

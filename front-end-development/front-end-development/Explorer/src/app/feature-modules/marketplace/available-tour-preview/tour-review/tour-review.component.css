@@ -1,0 +1,38 @@
+.review-container {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  background-color: rgb(245, 238, 245);
+  min-width: 200px;
+}
+
+/* .review-container:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+} */
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0;
+}
+
+.main-text {
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+
+.subheading {
+  color: rgb(49, 48, 48);
+  font-style: italic;
+  font-size: 11px;
+}

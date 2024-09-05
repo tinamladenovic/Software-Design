@@ -1,0 +1,18 @@
+<div class="select-container">
+  <mat-select
+    class="select-class"
+    [(value)]="selectedValue"
+    (selectionChange)="onSelectionChange()"
+  >
+    <mat-option value="all">All</mat-option>
+    <mat-option value="active">Active</mat-option>
+    <mat-option value="famous">Famous</mat-option>
+  </mat-select>
+  <button (click)="navigateCreateBlog()" *ngIf="this.userRole === 'author'">
+    Create new blog
+  </button>
+</div>
+<div class="blogs-container">
+  <xp-blog-item *ngFor="let blog of filteredBlogs" [blog]="blog">
+  </xp-blog-item>
+</div>

@@ -1,0 +1,31 @@
+<div class="main-container">
+    <div class="header-container">
+        <div class="picture-container">
+            <img class="profile-picture" src="../../../../assets/images/profile.png"/>
+        </div>
+        <div class="name-container">{{user.username}}</div>
+    </div>
+    <div *ngIf="tours.length === 0" class="no-tours">
+        This author does not have any tours yet
+    </div>
+    <div class="tour-container">
+        
+        <div class="single-tour" *ngFor="let tour of tours">
+            <div class="single-tour-header">{{tour.name}}</div>
+            <div class="tour-caracteristics">
+                <div class="caracteristic">
+                    Difficulty: <b>{{trensformDifficulty(tour.difficult)}}</b>
+                </div>
+                <div class="caracteristic">
+                    Distance: <b>{{tour.distance}}km</b>
+                </div>
+                <div class="caracteristic">
+                    <i>{{tour.description}}</i>
+               </div>
+            </div>
+            <div class="price-container">
+                {{tour.price}}$
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="main-container">
+    
+    <div *ngIf="showAddEquipmentForm">
+        <form [formGroup]="equipmentForm">
+            <div>
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="name" type="text"/>
+                </mat-form-field>
+                <mat-form-field>
+                <mat-label>Description</mat-label>
+                <textarea matInput
+                cdkTextareaAutosize
+                cdkAutosizeMinRows="1"
+                formControlName="description"
+                cdkAutosizeMaxRows="5"></textarea>
+                </mat-form-field>
+            <button  color="primary" type="submit" (click)="addEquipment()" mat-raised-button>Done</button>
+            </div>
+        </form>
+    </div>
+    <div class = "tours">
+        <div class="btn-menu-container">
+            <button class="btn-primary btn-menu" (click) = "addNewTour()">+ Add new tour</button>
+            <button class="btn-primary btn-menu" (click) = "createBundle()" *ngIf="!isSelectMode">Create bundle</button>
+            <button class="btn-primary btn-menu" (click) = "cancelCreatingBundle()" *ngIf="isSelectMode">Cancel</button>
+            <button class="btn-primary btn-menu" (click) = "createCoupon()" >Create coupon</button>
+
+        </div>
+        <div *ngFor = "let tour of tours">
+            <xp-author-tour
+                [tour] = tour
+                [isSelectMode]="isSelectMode"
+                (showEquipments) = "manageEquipment($event)"
+                (addEquipment) = "addEquipmentClick($event)"
+                (editTour) = "editSelectedTour($event)"
+                (archiveTour) = "archiveSelectedTour($event)"
+                (publishTour) = "publishSelectedTour($event)"
+                (selectTour)="addSelected($event)"
+                (deselectTour)="deselectTour($event)"
+            ></xp-author-tour>
+        </div>
+        <button class = "btn-primary btn-proceed-bundle" *ngIf="isSelectMode" [disabled]="!(selectedTours.length > 1)" (click) = "proceedBundle()">Proceed bundle</button>
+    </div>
+    
+</div>

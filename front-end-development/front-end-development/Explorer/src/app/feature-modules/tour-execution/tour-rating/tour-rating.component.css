@@ -1,0 +1,118 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+#tour-rating-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.review-form,
+.review,
+.reviews h3 {
+  font-family: sans-serif;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#tour-rating {
+  margin-top: 20px;
+}
+
+.average-rating {
+  font-size: 20px;
+}
+
+.review-form {
+  padding: 12px 15px;
+  font-size: 0.9em;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #3f51b5;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.reviews {
+  margin-top: 20px;
+}
+
+.reviews h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.review {
+  border: 1px solid #dddddd;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+}
+
+.review p {
+  margin: 0;
+}
+
+.review:last-child {
+  margin-bottom: 0;
+}
+
+.tour-rating-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tour-rating-table th,
+.tour-rating-table td {
+  border: 1px solid #777;
+  padding: 8px;
+  text-align: left;
+}
+
+.tour-rating-table th {
+  background-color: #315149;
+  color: #FAF8F3;
+  font-weight: 500;
+}
+
+.tour-rating-table tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.tour-rating-table tr:hover {
+  background-color: #e6e6e6;
+}

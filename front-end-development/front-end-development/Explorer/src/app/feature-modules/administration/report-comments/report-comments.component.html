@@ -1,0 +1,36 @@
+<div class="main-container">
+
+    <div class="container">
+        <form [formGroup]="commentForm" (ngSubmit)="addReportComment()">
+            <mat-form-field>
+                <mat-label>Comment</mat-label>
+                <textarea matInput
+                        cdkTextareaAutosize
+                        cdkAutosizeMinRows="1"
+                        formControlName="note"
+                        cdkAutosizeMaxRows="5"></textarea>
+            </mat-form-field>
+            <div class="row">
+            <button mat-raised-button class="btn-post-comment" color="primary" type="submit">Post comment</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="container1">
+            <div class="row" >
+                <h1>Comments</h1><hr>
+            </div>
+            <div class="row">
+                <table>
+                    <tbody>
+                    <tr *ngFor="let comment of reportComments" class="comment-bubble">
+                        <td>{{comment.commentText}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+      
+
+
+</div>

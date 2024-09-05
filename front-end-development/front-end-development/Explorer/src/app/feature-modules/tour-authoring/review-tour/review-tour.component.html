@@ -1,0 +1,52 @@
+<div class="createForm" >
+    <div class="createContainer">
+        <h1>Tour review</h1>
+        <form class="example-form" [formGroup] = "tourReviewForm">
+            <div>
+                <mat-form-field>
+                    <mat-label>Grade</mat-label>
+                    <input matInput formControlName = "grade">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Comment</mat-label>
+                    <textarea matInput formControlName = "comment"></textarea>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Time of tour</mat-label>
+                    <input matInput [matDatepicker]="picker" (dateInput)="addEvent('input', $event)">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+           <div>
+            <button mat-raised-button color="primary" type="submit" class="submitContainer" (click) = "submitTourReviewForm()">Submit</button>
+           </div>
+            
+            
+            
+            
+        </form>
+    </div>
+    <table>
+        <tr>
+            <th>Grade</th>
+            <th>Comment</th>
+            <th>Time of comment</th>
+            <th>Time of tour</th>
+        </tr>
+        <tbody>
+            <tr *ngFor = "let tourReview of tourReviews">
+                <td>{{tourReview.grade}}</td>
+                <td>{{tourReview.comment}}</td>
+                <td>{{tourReview.timeOfComment}}</td>
+                <td>{{tourReview.timeOfTour}}</td>
+            </tr>
+        </tbody>
+        
+    </table>    
+</div>

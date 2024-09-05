@@ -1,0 +1,101 @@
+div {
+  width: 400px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.mat-icon {
+  vertical-align: middle;
+}
+
+input {
+  padding: 10px;
+}
+
+.blog-form-wrapper {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  column-gap: 2rem;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.custom-file-input {
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.custom-file-input input {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-file-input label {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #315149;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+span{
+  margin-left: 0.5rem;
+}
+
+.publish-btn{
+  background-color: #315149 !important;
+  font-weight: 600 !important;
+
+}
+
+.custom-file-input label:hover {
+  background-color: #315149;
+}
+
+.custom-file-input input:focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.file-name {
+  font-size: .75rem;
+  color: #333;
+}
+
+form{
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.created-blog-wrapper {
+  width: 200px;
+}
+
+.blog-created-message {
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background-color: green;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+b {
+  font-size: 18px;
+}

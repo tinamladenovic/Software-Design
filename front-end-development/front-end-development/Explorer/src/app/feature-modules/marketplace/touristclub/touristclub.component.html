@@ -1,0 +1,37 @@
+
+<div class = "club-overview-container" 
+    *ngIf="touristClub && !isEditMode">
+    <div class="club-overview">
+        <div class="header">
+            <div class="header-left">
+                <div mat-card-avatar class="example-header-image"></div>
+            </div>
+            <div class="header-right">
+                <h1 class="h1-clubname-header">{{touristClub.clubName}}</h1>
+                <p class = "p-club-description">{{touristClub.description}}</p>
+                <button mat-raised-button type="submit" 
+                color = "primary" 
+                (click)="showEditMode()" 
+                class = "submit-form-button"
+                *ngIf = "userId == touristClub.ownerId">Edit</button>
+            </div>
+            
+        </div>
+        <div class = "toursitclub-tabs">
+            <mat-tab-group animationDuration="1000ms">
+                <mat-tab label="Overview">
+                    <div class = "overviewTab-comment">
+                    </div>
+                </mat-tab>
+                <mat-tab label="About">  </mat-tab>
+            </mat-tab-group>
+
+        </div>
+    </div>
+</div>
+<xp-touristclub-edit 
+[isEditMode]="isEditMode" 
+[touristClub]="touristClub" 
+*ngIf = "isEditMode"
+(editingComplete) = "editingComplete()"></xp-touristclub-edit>
+

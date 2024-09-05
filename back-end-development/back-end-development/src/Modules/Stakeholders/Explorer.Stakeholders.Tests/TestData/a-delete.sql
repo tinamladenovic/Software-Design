@@ -1,0 +1,9 @@
+DELETE FROM stakeholders."ApplicationRate";
+DELETE FROM stakeholders."Notifications";
+DELETE FROM stakeholders."Followers";
+DELETE FROM stakeholders."ClubRequests";
+DELETE FROM stakeholders."RequestsToJoinClub";
+DELETE FROM stakeholders."ClubUsers";
+DELETE FROM stakeholders."TouristNote";
+DELETE FROM stakeholders."People";
+DELETE FROM stakeholders."Users";

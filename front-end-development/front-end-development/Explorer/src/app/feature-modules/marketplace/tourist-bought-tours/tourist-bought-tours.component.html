@@ -1,0 +1,50 @@
+<h1 style="margin-left: 30px;">Your tours:</h1>
+<div class="available-tours-container">
+  <div *ngFor="let tour of availableTours" class="tour-container">
+    <h2>{{ tour.name }}</h2>
+    <p>{{ tour.description }}</p>
+    <p>Distance: {{ tour.distance }} km</p>
+    <p>Start Time: {{ tour.startTime }}</p>
+
+    <h3>Checkpoints:</h3>
+    <ul>
+      <ng-container
+        *ngIf="
+          tour.checkpoints && tour.checkpoints.length > 0;
+          else noCheckpoints
+        "
+      >
+        <li *ngFor="let checkpoint of tour.checkpoints" class="checkpoint-item">
+          <strong>Name:</strong> {{ checkpoint.name }}
+          <br />
+          <strong>Description:</strong> {{ checkpoint.description }}
+        </li>
+      </ng-container>
+      <ng-template #noCheckpoints>
+        <li>Checkpoints comming soon!</li>
+      </ng-template>
+    </ul>
+
+    <h3>Reviews:</h3>
+    <ul>
+      <ng-container
+        *ngIf="tour.tourReviews && tour.tourReviews.length > 0; else noReviews"
+      >
+        <li *ngFor="let review of tour.tourReviews" style="margin-bottom: 15px">
+          <strong>Comment:</strong>{{ review.comment }}
+          <br />
+          <strong>Grade:</strong> {{ review.grade }}
+          <br />
+          <strong>Time of Comment:</strong
+          >{{ formatDate(review.timeOfComment) }}
+          <br />
+        </li>
+      </ng-container>
+      <ng-template #noReviews>
+        <li>Reviews comming soon!</li>
+      </ng-template>
+    </ul>
+
+    <button mat-raised-button (click)="navigateToTourExecution(tour.id)">Execute Tour!</button>
+  </div>
+</div>

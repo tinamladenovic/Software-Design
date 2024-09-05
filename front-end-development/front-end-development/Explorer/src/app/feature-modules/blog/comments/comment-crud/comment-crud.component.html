@@ -1,0 +1,15 @@
+<div class="container">
+  <form (submit)="createComment()">
+    <div class="form-group">
+      <input
+        class="form-control"
+        type="text"
+        name="comment"
+        placeholder="Comment"
+        [(ngModel)]="comment.context"
+        required
+      />
+    </div>
+    <button class="btn-submit" type="submit">Create Comment</button>
+  </form>
+</div>

@@ -1,0 +1,15 @@
+DELETE FROM tours."Equipment";
+DELETE FROM tours."TourExecutions";
+DELETE FROM tours."Checkpoints";
+DELETE FROM tours."TouristClubs";
+DELETE FROM tours."TourRating";
+DELETE FROM tours."TourPreferences";
+DELETE FROM tours."Reports";
+DELETE FROM tours."Destinations";
+DELETE FROM tours."TourReview";
+DELETE FROM tours."TouristClubs";
+DELETE FROM tours."TouristEquipment";
+DELETE FROM tours."Tours";
+DELETE FROM tours."Sales";
+DELETE FROM tours."TourSaleConnections";
+DELETE FROM tours."CompositeTours";

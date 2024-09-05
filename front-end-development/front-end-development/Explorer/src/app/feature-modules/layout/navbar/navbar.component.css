@@ -1,0 +1,270 @@
+div {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  z-index: 10000;
+}
+
+#buttons {
+  width: auto;
+  margin-left: auto;
+}
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+div {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  align-self: center;
+  margin-right: 2.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 5px rgba(178, 160, 131, 0.6));
+  transform: scale(1.05);
+}
+
+.logo-logout {
+  width: 3rem;
+  height: 3rem;
+  align-self: center;
+  margin-right: 2.5rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.logo-logout:hover {
+  filter: drop-shadow(0 0 5px #faf8f3);
+  transform: scale(1.05);
+}
+
+.logo-text {
+  font-weight: 500;
+  color: #faf8f3;
+  text-transform: uppercase;
+  font-family: system-ui;
+  align-self: center;
+  margin-bottom: 0;
+  margin-right: 4rem;
+}
+
+.padding-global {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.navbar-container {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar {
+  display: flex;
+  background-color: #315149;
+  height: 6.5vh;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  justify-content: space-around;
+  width: 100%;
+}
+
+.navbar-left {
+  display: flex;
+  align-content: center;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.nav-links {
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-link {
+  background-color: transparent;
+  color: #faf8f3;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  margin-right: 2.5rem;
+  align-self: center;
+  font-size: 1rem;
+  height: 20px;
+  transition: color 0.3s, transform 0.3s;
+  position: relative;
+}
+
+.navbar-link::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #b2a083;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-out;
+}
+
+.navbar-link:hover {
+  color: #b2a083;
+}
+
+.navbar-link:hover::before {
+  transform: scaleX(1);
+}
+
+.btn-login {
+  background-color: #faf8f3;
+  color: #777;
+  border-radius: 0.75rem;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  margin-right: -3rem;
+  max-height: 60px;
+  align-self: center;
+  justify-self: end;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-login:hover {
+  color: #faf8f3;
+  background-color: #b2a083;
+}
+
+.btn-logout {
+  background-color: transparent;
+  border: none;
+  margin-top: 2.33rem;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-btn,
+.menu-btn:link,
+.menu-btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  height: 4rem;
+  display: inline-block;
+  transition: all 0.2s;
+  border-radius: 1rem;
+  position: relative;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.menu-btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.menu-btn:active,
+.menu-btn:focus {
+  outline: none;
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn--white {
+  background-color: #faf8f3;
+  color: #777;
+  font-size: 22px;
+  font-weight: 700;
+}
+.btn--white::after {
+  background-color: #faf8f3;
+}
+
+.btn--animated {
+  animation: moveInBottom 0.45s ease-out 0.15s;
+  animation-fill-mode: backwards;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin-top: -2.25rem;
+  background-color: #faf8f3;
+  min-width: 120px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  z-index: 999999;
+  border-radius: 0.75rem;
+  cursor: pointer;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s;
+  border-radius: 0.75rem;
+  transition: all 0.5s;
+}
+
+.dropdown-content a:hover {
+  filter: drop-shadow(0 0 5px #faf8f3);
+  background-color: #f5f5f5;
+  border-radius: 0.75rem;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  border-radius: 0.75rem;
+}
+
+.balance {
+  color: #faf8f3;
+  font-weight: 700;
+  background-color: transparent;
+  margin-right: 2.5rem;
+  align-self: center;
+  font-size: 1rem;
+  height: 20px;
+  position: relative;
+}
+
+.material-icons.cart-icon {
+  margin-right: 20px;
+  color: white;
+}
+.material-icons.cart-icon:hover {
+  cursor: pointer;
+}

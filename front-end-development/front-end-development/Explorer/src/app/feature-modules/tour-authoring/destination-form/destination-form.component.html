@@ -1,0 +1,43 @@
+<form [formGroup]="destinationForm" class="main-container">
+    <div class="form-container">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput="text" formControlName="name">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <textarea matInput="text" cdkTextareaAutosize cdkAutosizeMinRows="1" formControlName="description"
+                cdkAutosizeMaxRows="5">
+                </textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Longitude</mat-label>
+            <input matInput formControlName="longitude" type="number">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Latitude</mat-label>
+            <input matInput formControlName="latitude" type="number">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Type</mat-label>
+            <mat-select formControlName="type">
+                <mat-option value="Restaurant">Restaurant</mat-option>
+                <mat-option value="WC">WC</mat-option>
+                <mat-option value="Parking">Parking</mat-option>
+                <mat-option value="Other">Other</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div *ngIf="imagePreview">
+            <img [src]="imagePreview" alt="Selected Image">
+        </div>
+
+        <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*">
+
+        <button color="primary" type="submit" (click)="submitDestination()"
+            mat-raised-button>Submit</button>
+        <button color="primary" type="submit" (click)="emitCloseForm()"
+            mat-raised-button>Close</button>
+    </div>
+    <app-map class="app-map" (pinnedPlace)="onPinPlaced($event)"></app-map>
+</form>

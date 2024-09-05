@@ -1,0 +1,26 @@
+<div class="main-container">
+    <div class="container">
+        <div class="issues">
+            <h1 class="heading">Report Managment</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Naziv</th>
+                        <th>Priotiret</th>
+                        <th>Opis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let iss of issuesE" (click)="redirectToCommentsPage(iss.id)" style="cursor: pointer;" onmouseover="this.style.backgroundColor='#B2A083'" onmouseout="this.style.backgroundColor='transparent'" [class.past-due]="isPastDue(iss.dateCreated)">
+                        <td>{{iss.category}}</td>
+                        <td>{{iss.priority}}</td>
+                        <td>{{iss.description}}</td>
+                        <!-- <td>
+                            <button *ngIf="isTourist() && iss.id !== undefined" (click)="handleTouristAction(iss.id); $event.stopPropagation()">Problem resen</button>
+                        </td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+#encounter {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#title{
+    margin-bottom: 15px;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: semibold;
+    font-size: 2rem;
+    color: #315149;
+}
+
+#encounter-details {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+#encounter-table {
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
+}
+
+table {
+    margin-top: 25px;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: 700px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+thead tr {
+    background-color: #315149;
+    color: #ffffff;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px 15px;
+}
+
+th {
+    text-align: center;
+}
+
+tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid #315149;
+}
+
+tbody tr.active-row {
+    font-weight: bold;
+    color: #315149;
+}
+
+td img {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+::ng-deep .mat-tab-label {
+    font-size: 25px;
+    font-weight: semibold;
+}

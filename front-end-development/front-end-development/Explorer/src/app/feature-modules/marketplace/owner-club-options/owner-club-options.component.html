@@ -1,0 +1,34 @@
+<h2>Club guests:</h2>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cg of clubGuests">
+                <td>{{cg.username}}</td>
+                <td><button (click)="delete(cg.id)">Remove</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h2>Invite users</h2>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ncg of nonClubGuests">
+                <td>{{ncg.username}}</td>
+                <td><button (click)="invite(ncg.id)">Invite</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

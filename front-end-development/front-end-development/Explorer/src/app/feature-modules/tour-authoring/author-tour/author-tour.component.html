@@ -1,0 +1,67 @@
+<div class="main-container">
+    <div class="tour-header">
+        <h2>{{tour.name}}</h2>
+        <mat-checkbox 
+            *ngIf="isSelectMode && tour.status == 1" 
+            class ="checkbox"
+            [color] = "'primary'"
+            (change) = "checkSelected($event)"></mat-checkbox>
+    </div>
+    <div class="content-container">
+        <div class="info-container">
+            <div>
+                <h3>Description: {{tour.description}}</h3>
+            </div>
+            <div>
+                <h3>Status: {{transformStatus(tour.status)}}</h3>
+            </div>
+            <div>
+                <h3>Difficult: {{transformDifficult(tour.difficult)}}</h3>
+            </div>
+            <div>
+                <h3>Price: {{tour.price}}$</h3>
+            </div>
+            <div>
+                <h3>Distance: {{tour.distance}} km</h3>
+            </div>
+            <div *ngIf="isPublished || isArchived">
+                <button class="statistic-button" (click)="goToStatistic()">Statistic</button>
+            </div>
+            
+        </div>
+        <div class="middle-container">
+            <button (click)="editTourClick()" *ngIf="!isPublished && !isArchived" class="edit-button">
+                <mat-icon>edit</mat-icon>
+                <span>Edit </span>
+              </button>
+            <button  *ngIf = "isPublished && !isArchived" (click) = "archiveTourClick()" class="edit-button">
+                <mat-icon>archive</mat-icon>
+                <span>Archive  </span>
+                </button>
+            <button  *ngIf = "!isPublished && isArchived" (click) = "publishTourClick()" class="edit-button">
+                <mat-icon>publish</mat-icon>
+                <span>Publish  </span>
+                </button>
+        </div>
+        <div class="buttons-container">
+            
+                <button (click) = "checkEquipmentClick()">Check equipment</button>
+            
+                <button (click) = "addEquipmentClick()" *ngIf = "!isAddEquipment">Add equipment</button>
+                <div *ngIf = "isAddEquipment">
+                    <form [formGroup] = "equipmentForm">
+                        <mat-form-field>
+                            <mat-label>Tags</mat-label>
+                            <mat-select class="" formControlName = "equipments" multiple formControlName = "equipments">
+                            <mat-option *ngFor="let equipment of allEquipments" [value]="equipment">{{equipment.name}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <br>
+                        <button class="btn-save-equipment" (click) = "saveEquipments()">Save</button>
+                    </form>
+                </div>
+            
+        </div>
+    </div>
+    
+</div>

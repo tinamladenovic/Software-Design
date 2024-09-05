@@ -1,0 +1,33 @@
+.carousel-wrapper {
+    overflow: hidden;
+  }
+  
+  .carousel-item {
+    flex: 0 0 13%;
+    display: flex;
+    margin: 16px;
+  }
+  
+  .carousel-button {
+    flex: 0 0 auto;
+    display: flex;
+    margin: 16px;
+    width: 20px;
+    padding-top: 50px;
+    cursor: pointer;
+  }
+  
+  .carousel {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 6000px;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    max-width: 100%;
+  }
+  

@@ -1,0 +1,22 @@
+
+<div mat-dialog-content>
+    <p>Add bundle details</p>
+    <form [formGroup]="bundleForm" class = "bundleForm">
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput="text" formControlName="name"/>
+        </mat-form-field>
+      
+        <mat-form-field>
+          <mat-label>Bundle price</mat-label>
+          <input matInput="number" formControlName="price"/>
+        </mat-form-field>
+        
+        <mat-label>Total tours price: <b>{{ selectedToursPrice }}$</b></mat-label>
+      </form>
+      
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click) = "closeDialog()">Close</button>
+    <button mat-button cdkFocusInitial (click)="createBundle()">Create</button>
+</div>

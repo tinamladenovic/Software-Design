@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <!-- Create Sale Container -->
+  <div class="container">
+    <div class="row">
+      <h2 class="heading-secondary1">Create Sale</h2>
+    </div>
+
+    <div class="row">
+      <label for="startDate">Start Date:</label>
+      <input [(ngModel)]="startDate" type="date" id="startDate" required>
+    </div>
+
+    <div class="row">
+      <label for="endDate">End Date:</label>
+      <input [(ngModel)]="endDate" type="date" id="endDate" required>
+    </div>
+
+    <div class="row">
+      <mat-form-field>
+        <input matInput placeholder="Enter discount percentage" [(ngModel)]="discount">
+        <span matSuffix>%</span>
+      </mat-form-field>
+    </div>
+
+        <div class="row">
+          <mat-form-field class="discount-input">
+              <input matInput class="discount-input-text" placeholder="Enter discount percentage" [(ngModel)]="discount">
+              <span matSuffix>%</span>
+            </mat-form-field>
+        </div>
+  
+        <div class="row">
+       <button mat-raised-button type="submit" color = "primary" (click)="onSubmit()" class = "submit-form-button-sale">Add Tour to Sale</button>
+      </div>
+  
+
+
+  <!-- Tour List Container -->
+  <div class="list-container">
+    <div *ngIf="tours">
+      <h1 class="heading-secondary">All Available Tours</h1>
+    </div>
+
+    <div *ngFor="let tour of tours">
+      <div *ngIf="tour.authorId == userId" class="tour-list-item">
+        <div class="tour-details">
+          <h5 class="heading-secondary">{{ tour.name }} - {{ tour.description }} </h5>
+          <button class="btn btn--primary" (click)="addTourToSale(tour.id)">Add Tour to Sale</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

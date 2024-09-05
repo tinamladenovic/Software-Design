@@ -1,0 +1,20 @@
+.checkpoint-container{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    align-items: center;
+}
+
+.checkpoint-name{
+    font-variant: small-caps;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    width: 100%;
+    
+}

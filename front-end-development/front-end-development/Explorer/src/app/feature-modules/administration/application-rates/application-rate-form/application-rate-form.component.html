@@ -1,0 +1,15 @@
+<form [formGroup]="applicationRateForm">
+    <div class="form-container">
+        <h3>Rate application</h3>
+        <mat-form-field>
+            <mat-label>Rate</mat-label>
+            <input matInput formControlName="rate" type="number" min="1" max="5" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Comment</mat-label>
+            <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="1" formControlName="comment"
+                cdkAutosizeMaxRows="5"></textarea>
+        </mat-form-field>
+        <button color="primary" type="submit" (click)="createApplicationRate()" mat-raised-button>Create</button>
+    </div>
+</form>

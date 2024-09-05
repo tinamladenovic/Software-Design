@@ -1,0 +1,44 @@
+<div toastContainer></div>
+<div class = "main-container">
+    <h2 class="encounter-type-title">Encounter Types:</h2>
+    <div class="encounter-type-selection">
+        <label>
+            <input type="checkbox" [(ngModel)]="renderSocial" (ngModelChange)="drawEncounters()"/>
+            Social
+        </label>
+        <label>
+            <input type="checkbox" [(ngModel)]="renderHiddenLoc" (ngModelChange)="drawEncounters()"/>
+            Hidden Location
+        </label>
+        <label>
+            <input type="checkbox" [(ngModel)]="renderMisc" (ngModelChange)="drawEncounters()"/>
+            Misc
+        </label>
+    </div>
+
+    <app-map (pinnedPlace)="onPinPlaced($event)" (activatedEncounterId)="activateEncounter($event)"></app-map>
+
+    <div *ngIf="encounterActive" class="active-encounter-info">
+        <h2>Active Encounter</h2>
+        <h3>{{ encounter.name }}</h3>
+        <p>{{ encounter.description }}</p>
+        <div *ngIf="encounter.type === 1">
+            <p title="Find the location from which the image has been captured.">Type: Hidden Location</p>
+            <img [src]="getFullImageUrl(encounter.imageUrl)" alt="Encounter image">
+        </div>
+        <div *ngIf="encounter.type === 0">
+            <p title="The required amount of people have to be inside the encounter range">Type: Social</p>
+            <p>Required people: {{encounter.socialEncounterRequiredPeople}}</p>
+        </div>
+        <div *ngIf="encounter.type === 2">
+            <p title="Complete the given task">Type: Misc</p>
+            <p>Task: {{encounter.miscEncounterTask}}</p>
+            <button *ngIf="encounterActive" mat-raised-button type="submit" color="primary" 
+                (click)="finishMiscEncounter()" class="submit-form-button encounter-finished">Task Completed</button>
+        </div>
+
+        <button *ngIf="encounterActive" mat-raised-button type="submit" color="primary" 
+            (click)="abandonEncounter()" class="submit-form-button abandon-encounter">Abandon Encounter</button>
+    </div>
+
+</div>

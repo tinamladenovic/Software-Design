@@ -1,0 +1,66 @@
+<div class="main-container">
+  <div class="container">
+    
+      <div class="row">
+          <h1 class="heading-secondary">Create coupon</h1><hr>
+      </div>
+
+      <div class="row">
+          <mat-form-field >
+            <mat-label>Select a Tour:</mat-label>
+            <mat-select [(ngModel)]="selectedTourId" name="tourSelect" [disabled]="isSelectDisabled">
+              <mat-option *ngFor="let tour of tours" [value]="tour.id">{{ tour.name }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="row1">
+          <button mat-raised-button class="btn-coupon" color="primary" name="dugme" (click)="toggleSelect()">
+              {{ isSelectDisabled ? 'Select one tour' : 'Select all tours' }} Select
+            </button>
+        </div>
+
+        <div class="row">
+          <mat-form-field >
+              <input matInput placeholder="Enter discount percentage" [(ngModel)]="discount">
+              <span matSuffix>%</span>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+          <mat-form-field >
+              <input [(ngModel)]="expDate" matInput [matDatepicker]="picker" placeholder="Choose expiration date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+        <button mat-raised-button class="btn-coupon" color="primary" (click)="addCoupon()">
+          Create coupon
+      </button>
+      </div>
+
+
+  </div>
+
+   <div class="container1">
+      <div class="row">
+          <h1 class="heading-secondary">Delete coupon</h1><hr>
+        </div>
+          <div class="row">
+              <div class="row">
+                  <mat-form-field>
+                      <input matInput placeholder="Enter hash to delete" [(ngModel)]="hashToDelete">
+                    </mat-form-field>
+                </div>
+
+                <div class="row">
+                  <button mat-raised-button class="btn-coupon" color="primary" (click)="removeCoupon(hashToDelete)">
+                    Delete coupon
+                </button>
+                </div>
+          </div>
+      
+  </div> 
+  </div>

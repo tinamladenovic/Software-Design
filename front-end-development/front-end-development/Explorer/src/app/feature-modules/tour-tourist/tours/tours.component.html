@@ -1,0 +1,14 @@
+<div *ngFor="let tour of tours">
+    <div class="card">
+        <div class="card-header">
+          {{ tour.name }}
+        </div>
+        <div class="card-body">
+          <p>{{ tour.description }}</p>
+          <p>Distance: {{ tour.distance }} km</p>
+          <p>Price: ${{ tour.price }}</p>
+            <button mat-raised-button color="primary" (click)="start(tour)">Start</button>
+
+        </div>
+      </div>
+</div>

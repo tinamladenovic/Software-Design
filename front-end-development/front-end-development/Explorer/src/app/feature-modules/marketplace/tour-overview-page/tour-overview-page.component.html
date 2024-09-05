@@ -1,0 +1,101 @@
+<div class = "tour-overview-main-container" *ngIf="tour">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <div class = "tour-overview-left">
+        <div class="tour-overview-image-slider">
+            <xp-picture-slider *ngIf="checkpoints.length > 0" class="picture-slider" [checkpoints]="checkpoints"
+                imageSize="800" />
+        </div>
+    </div>
+    <div class = "tour-overview-right">
+        <div class = "tour-overview-name-rate">
+            <h1 class = "tour-overview-h1">{{tour.name}}</h1>
+            <div class="stats-container">
+                <mat-icon style="color: gold;" matTooltip="Average rating for the past week">star</mat-icon>
+                <h2 class="tour-stats">
+                    {{averageRating | number:'1.2-2'}} 
+                </h2>
+            </div>
+        </div>
+        <p *ngIf="!selectedBundle" class = "tour-overview-p price">${{tour.price | number:'1.2-2'}}</p>
+        <div *ngIf="selectedBundle" class = "tour-overview-selected-bundle">
+            <p class="tour-overview-tour-name-h2" *ngFor="let bundleTour of selectedBundle.tours; let last = last">
+                <ng-container *ngIf="bundleTour.tourName !== tour.name">
+                    {{ !last ? ' + ' : ' ' }}{{ bundleTour.tourName }}
+                </ng-container>
+            </p>
+            
+            <p class = "tour-overview-p price" style="text-decoration: line-through;">${{tour.price | number:'1.2-2'}}</p>
+            <p class = "tour-overview-p price" style="color: rgb(245, 78, 78);">${{selectedBundle.price | number:'1.2-2'}}</p>
+        </div>
+
+        <div class = "tour-overview-right-under">
+            <div class = "tour-overview-difficulty-div">
+                <p class = "tour-overview-p difficulty">Difficulty</p>
+                <mat-chip class = "tour-overview-mat-chip" [ngClass]="getDifficultyClass()">
+                    {{ tour.difficult === 0 ? 'Easy' : tour.difficult === 1 ? 'Medium' : 'Hard' }}
+                </mat-chip>
+            </div>
+            <div class = "tour-overview-tags-div">
+                <p class = "tour-overview-p tags">Tags</p>
+                <mat-chip class = "tour-overview-mat-chip" *ngFor="let tag of tags" class="example-box"
+                    [ngStyle]="{'background-color': '#315149'}">
+                    {{tag}}
+                </mat-chip>
+            </div>
+
+            <div class = "tour-overview-tags-div">
+                <p class = "tour-overview-p tags">Distance</p>
+                <p class = "tour-overview-p distance">{{tour.distance}} m</p>
+            </div>
+
+            <div class = "tour-overview-checkpoints">
+                <p class = "tour-overview-p checkpoints">Checkpoints</p>
+                <div class = "tour-overview-checkpoints-div">
+                    <p class = "tour-overview-p checkpoint" *ngFor="let checkpoint of checkpoints">{{checkpoint.name}}</p>
+                </div>
+            </div>
+
+            <div class = "tour-overview-description-div">
+                <p class = "tour-overview-p checkpoints">Description</p>
+                <p>{{tour.description}}</p>
+            </div>  
+
+            <div class="tour-overview-bundles" *ngIf="bundles && bundles.length > 0">
+                <h2>Bundles</h2>
+                <mat-radio-group [(ngModel)]="selectedBundle">
+                    <!-- Add an extra radio button for deselection -->
+                    <mat-radio-button [value]="null">
+                        <div class="tour-overview-bundle-info">
+                            <p class="tour-overview-tour-name-p">None</p>
+                        </div>
+                    </mat-radio-button>
+                    
+                    <div class="tour-overview-bundle" *ngFor="let bundle of bundles">
+                        <mat-radio-button [value]="bundle">
+                            <div class="tour-overview-bundle-info">
+                                <div class = "tour-overview-bundle-tour" *ngFor="let tour of bundle.tours; let last = last">
+                                    <p class="tour-overview-tour-name-p" >
+                                        {{tour.tourName}}
+                                    </p>
+                                    <p class = "tour-overview-tour-name-p" *ngIf="!last">
+                                        +
+                                    </p>
+                                </div>
+                                
+                                <p class="tour-overview-bundle-price-p">${{bundle.price | number:'1.2-2'}}</p>
+                            </div>
+                        </mat-radio-button>
+                    </div>
+                </mat-radio-group>
+            </div>
+            
+            
+
+            <button class="tour-overview-add-to-cart" mat-raised-button (click)="addToCart(tour)" color="primary" type="submit">
+                {{ selectedBundle ? 'Add Bundle to Cart' : 'Add to Cart' }}
+            </button>
+            
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,41 @@
+.searchForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+.list-of-tours {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .table-container {
+    border-collapse: collapse;
+    width: 60%;
+  }
+  
+  .table-row {
+    border: 1px solid #ddd;
+  }
+  
+  .table-cell {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .table-header {
+    font-weight: bold;
+    background-color: #f2f2f2;
+  }

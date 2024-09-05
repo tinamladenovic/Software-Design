@@ -1,0 +1,13 @@
+<div class="campaign-tour-container">
+    <div>
+        <div class="tour-name">{{tour.name}}</div>
+        <div class="description">
+            {{tour.description}}
+        </div>
+    </div>
+    <div class="buttons-container">
+        <button class="add-button" *ngIf="!isAdded" (click)="addButtonClick()">+ Add</button>
+        <button class="remove-button" *ngIf="isAdded" (click) = "removeButtonClick()" >- Remove</button>
+    </div>
+</div>
+

@@ -1,0 +1,167 @@
+.body {
+    background-color: #FAF8F3; 
+    color: #315149; 
+}
+
+.leaderboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: #FAF8F3; 
+    margin-top: 10px; 
+    color: #315149; 
+    gap: 50px;
+}
+
+.leaderboard-table {
+    font-size: 22px;
+    border-collapse: separate; /* Needed to add space between cells */
+    border-spacing: 7px 4px;
+    border: 3px solid #B2A083; /* Use #315149 for the table border color */
+    border-radius: 10px; /* Add this line to make the table borders slightly curved */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1); /* Add this line to give the tables a 3D feel */
+    padding: 10px;
+}
+
+.leaderboard-table tr:nth-of-type(even) td {
+    background-color: #ece3d5; /* Change this to the color you want */
+}
+
+.leaderboard-table tr {
+    overflow: hidden; /* Add this line to make sure the border-radius is respected */
+}
+
+.leaderboard-table tbody tr {
+    line-height: 28px !important; /* Align the text vertically */
+}
+
+.leaderboard-table th {
+    padding: 15px;
+    text-align: left;
+    background-color: #315149; /* Use #315149 for the table header background color */
+    color: white; /* Use white for the table header text color */
+    border-radius: 10px; /* Use white for the table header text color */
+}
+
+.leaderboard-table td {
+    padding: 15px;
+    text-align: left;
+    background-color: #FAF8F3; /* Use #FAF8F3 for the table cell background color */
+    color: black; /* Use black for the table cell text color */
+    border-radius: 10px;
+}
+
+.leaderboard-table th, .leaderboard-table td {
+    padding: 15px 18px; /* Increase the horizontal padding to 18px */
+    text-align: left;
+}
+
+.medal {
+    font-size: 30px; 
+    margin-left: 10px; 
+    align-self: center;
+}
+
+.gold-medal {
+    color: gold;
+}
+
+.silver-medal {
+    color: silver;
+}
+
+.bronze-medal {
+    color: #cd7f32;
+}
+
+h2.leaderboard-h2 {
+    font-size: 26px;
+    font-weight: semi-bold;
+    color: #B2A083;
+    text-align: center;
+}
+
+.leaderboard-table th {
+    font-weight: 500;
+}
+
+.rank-container {
+    display: flex;
+    align-items: center;
+}
+
+.mat-mdc-tab.mdc-tab 
+{ 
+  font-size: 30px;
+  font-weight: 550;
+  margin-top: 5px;
+  color: #315149;
+}
+
+.table-container {
+    margin: 0 25px; /* Add horizontal margin */
+}
+
+h1.leaderboard-h1 {
+    margin-top: 30px;
+    font-size: 34px;
+    font-weight: 500;
+    text-align: center;
+    color: #315149;
+}
+
+.leaderboard-title {
+    position: relative; /* Add this */
+    margin-top: 40px;
+    font-size: 45px;
+    color: #315149;
+    display: inline-block;
+    padding: 10px 65px;
+}
+
+.leaderboard-title::after {
+    content: "";
+    position: absolute;
+    left: 25px; /* Adjust as needed */
+    right: 25px; /* Adjust as needed */
+    bottom: 0;
+    border-bottom: 5px solid #315149;
+}
+
+.leaderboard-table tr.current-user td{
+    background-color: #d8c9b2;
+}
+
+.user-icon {
+    font-size: 30px; 
+    margin-left: 5px;
+    margin-bottom: 8px;
+    color: rgb(94, 91, 91);
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center; /* This will center the buttons */
+    gap: 40px; /* This will add a gap between the buttons */
+    margin: 20px 0; /* Add some vertical margin */
+}
+
+.prev-button, .next-button {
+    background-color: #315149; /* Use the same color as the table header */
+    color: white; /* Use white for the text color */
+    border: none; /* Remove the default button border */
+    border-radius: 10px; /* Make the buttons slightly curved */
+    padding: 10px 30px; /* Increase the horizontal padding */
+    font-size: 22px; /* Increase the font size */
+    cursor: pointer; /* Change the cursor to a hand when hovering over the buttons */
+    transition: background-color 0.3s ease; /* Add a transition for the background color */
+}
+
+.prev-button:disabled, .next-button:disabled {
+    background-color: #c9c5c0; /* Change the background color */
+    cursor: not-allowed; /* Change the cursor */
+}
+
+.prev-button:not(:disabled):hover, .next-button:not(:disabled):hover {
+    background-color: #B2A083; 
+}

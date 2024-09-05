@@ -1,0 +1,61 @@
+.available-tours-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 30px;
+  row-gap: 20px;
+  padding-left: 30px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.tour-container {
+  margin-top: 19px;
+  border: 2px solid #3498db;
+  min-width: 300px;
+  flex-shrink: 0;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.2),
+    0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s;
+  font-family: "Arial", sans-serif;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  margin-bottom: 20px; /* Dodajte ovu liniju kako biste dodali razmak ispod h1 */
+}
+
+.tour-container:hover {
+  transform: scale(1.05); /* efekat povećanja na hover */
+}
+
+h2 {
+  font-size: 35px;
+}
+
+h3 {
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+}
+
+ul.checkpoints-list {
+  padding: 0;
+  list-style: none;
+}
+
+li.checkpoint-item {
+  margin-bottom: 15px; /* Podešavanje razmaka između svakog checkpointa */
+}
+
+button {
+  background-color: #2196f3 !important;
+  color: white;
+  padding: 10px;
+  margin-left: 10px;
+  transition: background-color 1s ease;
+}

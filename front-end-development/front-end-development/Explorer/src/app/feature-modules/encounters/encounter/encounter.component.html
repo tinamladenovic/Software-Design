@@ -1,0 +1,145 @@
+<div id="encounter">
+    <h1 id="title">Encounters</h1>
+    <hr>
+    <div id="encounter-details">
+        <div>
+            <mat-tab-group>
+                <mat-tab label="Social encounters">
+                    <div id="encounter-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Xp</th>
+                                    <th>Status</th>
+                                    <th>Range</th>
+                                    <th>People required</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let e of socialEncounters">
+                                    <td>{{e.name}}</td>
+                                    <td>{{e.description}}</td>
+                                    <td>{{e.xp}}</td>
+                                    <td>{{getStatusString(e.status)}}</td>
+                                    <td>{{e.range}}</td>
+                                    <td>{{e.socialEncounterRequiredPeople}}</td>
+                                    <td>
+                                        <button color="accent" (click)="deleteEncounter(e.id || 0)" mat-icon-button>
+                                            <mat-icon>delete</mat-icon>
+                                        </button>
+                                        <button color="primary" (click)="onEditClicked(e)" mat-icon-button>
+                                            <mat-icon>edit</mat-icon>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <button color="primary" (click)="onAddClicked(0)" mat-icon-button>
+                                        <mat-icon>add</mat-icon>
+                                    </button>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </mat-tab>
+        
+                <mat-tab label="Hidden location encounters">
+                    <div id="encounter-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Xp</th>
+                                    <th>Status</th>
+                                    <th>Range</th>
+                                    <th>Image</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let e of hiddenLocationEncounters">
+                                    <td>{{e.name}}</td>
+                                    <td>{{e.description}}</td>
+                                    <td>{{e.xp}}</td>
+                                    <td>{{getStatusString(e.status)}}</td>
+                                    <td>{{e.range}}</td>
+                                    <td>
+                                        <img [src]="getFullImageUrl(e.imageUrl)" alt="Hidden location Image"/>
+                                    </td>
+                                    <td>{{e.socialEncounterRequiredPeople}}</td>
+                                    <td>
+                                        <button color="accent" (click)="deleteEncounter(e.id || 0)" mat-icon-button>
+                                            <mat-icon>delete</mat-icon>
+                                        </button>
+                                        <button color="primary" (click)="onEditClicked(e)" mat-icon-button>
+                                            <mat-icon>edit</mat-icon>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <button color="primary" (click)="onAddClicked(1)" mat-icon-button>
+                                        <mat-icon>add</mat-icon>
+                                    </button>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </mat-tab>
+        
+                <mat-tab label="Misc encounters">
+                    <div id="encounter-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Xp</th>
+                                    <th>Status</th>
+                                    <th>Range</th>
+                                    <th>Task</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let e of miscEncounters">
+                                    <td>{{e.name}}</td>
+                                    <td>{{e.description}}</td>
+                                    <td>{{e.xp}}</td>
+                                    <td>{{getStatusString(e.status)}}</td>
+                                    <td>{{e.range}}</td>
+                                    <td>{{e.miscEncounterTask}}</td>
+                                    <td>
+                                        <button color="accent" (click)="deleteEncounter(e.id || 0)" mat-icon-button>
+                                            <mat-icon>delete</mat-icon>
+                                        </button>
+                                        <button color="primary" (click)="onEditClicked(e)" mat-icon-button>
+                                            <mat-icon>edit</mat-icon>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <button color="primary" (click)="onAddClicked(2)" mat-icon-button>
+                                        <mat-icon>add</mat-icon>
+                                    </button>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </mat-tab>
+              </mat-tab-group>   
+        </div>
+
+        <div>
+            <xp-encounter-form 
+                *ngIf="shouldRenderEncounterForm" [shouldEdit]="shouldEdit" [encounter]="selectedEncounter" [typeValue]="formEncounterType"
+                (encountersUpdated)="getAllEncounters()" (closeForm)="closeForm()">
+            </xp-encounter-form>
+        </div>
+    </div>
+</div>

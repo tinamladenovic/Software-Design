@@ -1,0 +1,22 @@
+.form-container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2;
+}
+
+.form-container h3 {
+  color: #315149;
+  font-size: 26px;
+}
+
+button[type="submit"] {
+  background-color: #315149;
+  color: #ffffff;
+}
+
+button[type="submit"]:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}

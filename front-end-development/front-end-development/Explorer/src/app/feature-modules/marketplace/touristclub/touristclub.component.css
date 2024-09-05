@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #315149;
+}
+
+.club {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 400px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #333;
+}
+
+.club-owner {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.club-owner img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.club-owner p {
+    font-weight: bold;
+}
+
+.club-details h3 {
+    margin-top: 20px;
+}
+
+.edit-club-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-club-button:hover {
+    background-color: #0056b3;
+}
+
+body 
+{
+    justify-content: center;
+}
+
+.club-overview-container
+{
+   display: flex;
+   justify-content: center;
+}
+.club-overview
+{
+    margin-top: 2.5rem;
+    width: 50%;
+}
+.header
+{
+    display: flex;
+    flex-direction: row;
+}
+.header-left
+{
+    width: 35%;
+}
+.header-right
+{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    
+}
+.h1-clubname-header
+{
+    margin-bottom: 1rem;
+    padding: 0;
+    font-size: 40px;
+    align-self: flex-start;
+}
+
+.p-club-description
+{
+    text-align: left;
+    color: #315149;
+    font-size: 1.2rem;
+}
+
+.modify-button
+{
+    align-self:baseline;
+    margin-left: 5rem;
+}

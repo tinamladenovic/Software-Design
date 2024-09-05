@@ -1,0 +1,8 @@
+<mat-card class="blog-item" (click)="openBlog()">
+  <img class="blog-image" [src]="cover" />
+  <h2 class="blog-title">{{ blog.name }}</h2>
+  <p class="blog-author">By: {{ blog.author }}</p>
+  <div *ngIf="this.blog.status === 1" class="regular">REGULAR</div>
+  <div *ngIf="this.blog.status === 2" class="active">ACTIVE</div>
+  <div *ngIf="this.blog.status === 3" class="famous">FAMOUS</div>
+</mat-card>

@@ -1,0 +1,68 @@
+<section class="user-profile">
+  <div class="container">
+    <div class="container-content">
+      <div class="logo" *ngIf="userProfile">
+        <img class="logo-img" [src]="getFullImageUrl(userProfile.image)" />
+      </div>
+
+
+      <div class="information">
+        <h2 class="heading-secondary" *ngIf="user && user.username !== ''">
+          {{ user.username }}
+        </h2>
+        <div class="followers-following">
+          <button class="btn-num" (click)="openFollowersDialog('followers')">
+            <div class="followers">
+              <p class="number">{{ numOfFollowers }}</p>
+              <p>Followers</p>
+            </div>
+          </button>
+          <button class="btn-num" (click)="openFollowersDialog('following')">
+            <div class="following">
+              <p class="number">{{ numOfFollowing }}</p>
+              <p>Following</p>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div class="tools">
+        <button class="btn-secondary btn" style="margin-top: 1rem;" [routerLink]="['/update-profile']">
+          Edit profile
+        </button>
+      </div>
+
+      <div class="distanceTraveled">
+        <div class="infoContainer">
+          <p class="countInfo">Completed tour count: <b> {{completedTourCount}} </b></p>
+        </div>
+        <div class="infoContainer">
+          <p class="countInfo">Total covered distance: <b> {{totalCoveredDistance}}km </b></p>
+        </div>
+        <div class="infoContainer">
+          <p class="countInfo">Completed encounters: <b> {{completedEncounters}} </b></p>
+        </div>
+      </div>
+
+      <div *ngIf="notFollowing.length > 0">
+        <h2 class="heading-secondary-2">Suggested followers</h2>
+        <div class="user-list">
+          <div *ngFor="let u of notFollowing" class="user-container">
+            <div class="user-info">
+              <p class="username">{{ u.username }}</p>
+              <button class="btn-follow" (click)="followUser(u.id)">
+                Follow
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="notifications">
+        <button class="btn-notifications" (click)="openNotificationsDialog()">
+          <mat-icon>notifications</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

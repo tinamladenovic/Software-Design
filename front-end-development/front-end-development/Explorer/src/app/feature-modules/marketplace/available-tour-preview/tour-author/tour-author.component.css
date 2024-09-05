@@ -1,0 +1,21 @@
+.author {
+  display: block;
+  background-color: #315149;
+  font-weight: 500;
+  padding: 0.5rem;
+  border-radius: .3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  justify-self: center;
+  align-self: center;
+  width: 250px;
+  text-align: center;
+  color: white;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  font-family: Georgia;
+  font-family: sans-serif;
+}

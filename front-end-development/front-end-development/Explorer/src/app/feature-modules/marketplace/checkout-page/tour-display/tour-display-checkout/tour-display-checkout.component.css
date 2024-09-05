@@ -1,0 +1,26 @@
+.tour-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 5px;
+    font-family: 'Montserrat';
+    align-items: center;
+    height: 60px;
+}
+.tour-name
+{
+    font-size: 18px;
+}
+.tour-card:hover 
+{
+    background-color: #dbdbdb;
+}
+p, h4
+{
+    margin: 0;
+    padding: 0;
+}
+.tour-checkout-ng-container
+{
+    border: 0 solid;
+}

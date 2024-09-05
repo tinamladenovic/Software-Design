@@ -1,0 +1,48 @@
+<div class="tourpreferences">
+  <div class="container">
+    <h1>Tour Preferences</h1>
+    <hr>
+    <div class="tour-preferences-details">
+      <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Difficulty</th>
+            <th>Preferences</th>
+            <th>Rating</th>
+            <th>Tags</th>
+            <th></th>
+            
+            
+            
+          </tr>
+        </thead>
+          <tbody>
+            <tr *ngFor="let tp of tourpreferences">
+              <td>{{tp.tourDifficult}}</td>
+              <td>{{tp.tourTravelMethod}}</td>
+              <td>{{tp.rating}}</td>
+              <td>{{tp.tags}}</td>
+              <td>
+                <button color="accent" (click)="deleteTourPreferences(tp.id || 0)" mat-icon-button>
+                    <mat-icon>delete</mat-icon>
+                </button>
+                <button color="primary" (click)="onEditClicked(tp)" mat-icon-button>
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </td>
+            </tr>
+            <tr><button color="primary" (click)="onAddClicked()" mat-icon-button>
+              <mat-icon>add</mat-icon>
+          </button></tr>
+          </tbody>
+      </table>
+    </div>
+
+    <div>
+        <xp-tour-preferences-form *ngIf="shouldRenderTourPreferencesForm" (tourPreferencesUpdated)="getTourPreferences()" [tourpreferences]="selectedTourPreferences" [shouldEdit]="shouldEdit"></xp-tour-preferences-form>
+    </div>
+    </div>
+  </div>
+</div>
+

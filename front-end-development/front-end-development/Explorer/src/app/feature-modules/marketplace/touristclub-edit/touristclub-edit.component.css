@@ -1,0 +1,36 @@
+.club-edit-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center both horizontally and vertically */
+    margin: 3rem auto; /* Center horizontally and add some top margin */
+    width: 50%;
+    max-width: 600px;
+}
+.iconbutton
+{
+    order: -1; /* Place the button first */
+    margin-bottom: 2rem; /* Add some space between the button and the form */
+    align-self: flex-start; /* Align to the left */
+}
+form 
+{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+.choose-file-button
+{
+    width: 40%;
+    margin-bottom: 2rem;
+}
+.submit-form-button
+{
+    width: 100%;
+    height: 3rem;
+    align-self: center;
+}
+.file-name {
+    margin-left: 1rem; /* or whatever margin you require */
+}

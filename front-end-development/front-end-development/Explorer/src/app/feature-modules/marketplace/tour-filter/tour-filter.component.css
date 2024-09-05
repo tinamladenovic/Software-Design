@@ -1,0 +1,103 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Stilovi za naslov */
+.tour-filter-title {
+  font-family: "Arial Black", sans-serif; 
+  color: #9f6393; 
+}
+
+
+
+#filter-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  border: 1px solid #9f6393;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin-left: 150px;
+  width: 80%;
+}
+
+#filter-container div {
+  display: flex;
+  flex-direction: column;
+}
+
+#filter-container label {
+  margin-bottom: 5px;
+}
+
+#filter-container select,
+#filter-container input[type="text"] {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #9f6393;
+  font-size: 16px;
+}
+
+#filter-container button {
+  padding: 8px 15px;
+  border-radius: 4px;
+  background-color: #9f6393;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#filter-container button:hover {
+  background-color: #9f6393;
+}
+
+.center-table {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  font-family: Arial, sans-serif;
+}
+
+.center-table th,
+.center-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.center-table th {
+  background-color: #9f6393;
+  color: white;
+}
+
+.center-table tbody tr:nth-of-type(odd) {
+  background-color: #f5f5f5;
+}
+
+.center-table tbody tr:hover {
+  background-color: #e0e0e0;
+}
+
+.center-table td:last-child {
+  text-align: center;
+}
+
+.center-table th:first-child,
+.center-table td:first-child {
+  padding-left: 20px;
+}
+
+.center-table th:last-child,
+.center-table td:last-child {
+  padding-right: 20px;
+}

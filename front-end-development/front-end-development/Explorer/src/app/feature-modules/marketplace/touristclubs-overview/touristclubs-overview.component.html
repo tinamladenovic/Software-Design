@@ -1,0 +1,16 @@
+<div class="club-overview-container">
+  <div class="club" *ngFor="let club of touristClubs">
+    <mat-card class="example-card" (click)="showClubDetails(club.id)">
+      <mat-card-header>
+        <mat-card-title>{{club.clubName}}</mat-card-title>
+        <mat-card-subtitle>Owner Name</mat-card-subtitle>
+      </mat-card-header>
+      <img class="card-image" mat-card-image [src]="getFullImageUrl(club.image!)">
+      <mat-card-content>
+        <p>
+          {{club.description}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

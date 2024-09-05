@@ -1,0 +1,46 @@
+<div class="container">
+   
+    <div class="row">
+        <h2 class="heading-secondary">Request to Join Club</h2>
+    </div>
+    
+    <div style="margin-top: -25px; width: 100%;">
+        <hr>
+    </div>
+
+    <div class="row">
+        <mat-form-field class="md-select">
+          <mat-label>Select a Tourist Club:</mat-label>
+          <mat-select [(ngModel)]="selectedClubId" name="clubSelect">
+            <mat-option *ngFor="let club of touristClubs" [value]="club.id">{{ club.clubName }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+      <button class="btn btn--primary" (click)="addRequest()">
+        Send request
+     </button>
+    </div>
+
+    <div class="row request-details">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID request</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tr *ngFor="let req of requests">
+                <td >{{ req.id }}</td>
+                <td >{{ getStatusDisplay(req.status) }}</td>
+                <td >
+                    <button color="accent" (click)="deleteRequest(req.id || 0)" mat-icon-button>
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="ratings-container">
+  <div class="blog-ratings">
+    <img
+      *ngIf="!userUpvoted"
+      src="./assets/images/blog/upvote.png"
+      (click)="upvote()"
+    />
+    <img
+      *ngIf="userUpvoted"
+      src="./assets/images/blog/upvote-fill.png"
+      (click)="removeUpvote()"
+    />
+    <p class="rating">Rating: {{ rating }}</p>
+    <img
+      *ngIf="!userDownvoted"
+      src="./assets/images/blog/downvote.png"
+      (click)="downvote()"
+    />
+    <img
+      *ngIf="userDownvoted"
+      src="./assets/images/blog/downvote-fill.png"
+      (click)="removeDownvote()"
+    />
+  </div>
+</div>

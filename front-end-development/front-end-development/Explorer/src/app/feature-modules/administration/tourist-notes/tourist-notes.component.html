@@ -1,0 +1,38 @@
+<div class="touristNotes">
+    <div class="container">
+        <h1>Tourist notes</h1>
+        <hr>
+        <div class="touristNotes-details">
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Notes</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let tn of touristNotes">
+                        <td>{{tn.note}}</td>
+                        <td>
+                            <button color="accent" (click)="deleteTouristNote(tn.id || 0)" mat-icon-button>
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                            <button color="primary" (click)="onEditClicked(tn)" mat-icon-button>
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr><button color="primary" (click)="onAddClicked()" mat-icon-button>
+                        <mat-icon>add</mat-icon>
+                    </button></tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <xp-tourist-notes-form *ngIf="shouldRenderEquipmentForm" [shouldEdit]="shouldEdit" [touristNote]="selectedTouristNote" (touristNotesUpdated)="getTouristNotes()"></xp-tourist-notes-form>
+        </div>
+        </div>
+    </div>
+</div>

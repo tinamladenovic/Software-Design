@@ -1,0 +1,139 @@
+.main-container{
+    background-color: lightgray;
+    
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    
+}
+
+.tour-header{
+    background-color: #315149;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    font-size: 36px;
+    font-variant: small-caps;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-bottom: 6px;
+}
+.checkbox
+{
+    margin-right: 2rem;
+}
+.tour-header h2{
+    font-size: 36px;
+    margin: 5px;
+    color: #fff;
+}
+
+.description-container{
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+.content-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 20px;
+}
+
+.info-container{
+    width: 30%;
+    
+}
+
+.buttons-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-right: 1.5rem ;
+}
+
+.buttons-container button,select{
+    background-color: #FAF8F3;
+    font-weight: bold;
+    height: 40%;
+    border: 1px solid #000;
+    border-radius: .75rem;
+    transition: all .2s;
+
+    &:hover{
+        transform: scale(1.05);
+        cursor: pointer; 
+    }
+}
+
+.btn-save-equipment
+{
+    background-color: #FAF8F3;
+    font-weight: bold;
+    height: 10rem;
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: .75rem;
+    transition: all .2s;
+
+    &:hover{
+        transform: scale(1.05);
+        cursor: pointer; 
+    }
+}
+
+.middle-container{
+    display: flex;
+    align-items: flex-end;
+}
+
+.middle-container button{
+    margin: 10px;
+    padding: 5px 0px;
+    width: 8rem;
+    border-radius: 5px;
+    background-color: #315149;
+    color: #fff;
+    border-color: transparent;
+    text-transform: uppercase;
+    font-size: 18px;
+    transition: all .2s;
+
+    &:hover{
+        transform: scale(1.1);
+        cursor: pointer; 
+    }
+}
+
+.edit-button {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+  
+  .edit-button mat-icon {
+    margin-right: 0.5rem;
+    
+  }
+  
+  .statistic-button{
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #315149;
+    color: white;
+    font-variant: small-caps;
+    transition: all .2s;
+    border-radius: 5px;
+    border: 0px;
+
+    &:hover{
+        transform: scale(1.05);
+        cursor: pointer; 
+    }
+
+  }

@@ -1,0 +1,181 @@
+.cart-h2 {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+  color: #315149;
+}
+
+.cart-container{
+  max-width: 1000px;
+  background-color: #FAF8F3;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tour-name {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0;
+}
+
+.total-price {
+  font-weight: bold;
+  margin-top: 15px;
+  padding: 10px;
+  font-size: 30px;
+  display: block;
+  width: 500px;
+  text-align: left;
+  color: #315149;
+}
+
+.cart-item {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-bottom: 10px;
+  background-color: #315149;
+  border-radius: 1rem;
+  color: #FAF8F3;
+}
+
+.cart-item button {
+  background-color: #FAF8F3;
+  color: #315149;
+  font-weight: 600;
+  transition: all 0.3s;
+
+}
+
+/* .cart-item button:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+} */
+
+.empty-cart-message {
+  color: #888;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.coupon-code{
+  display: flex;
+  align-items: center;
+  width: 400px;
+  justify-content: space-between;
+  margin-left: 0.5rem;
+}
+
+.apply-btn{
+  background-color: #315149 !important;
+  color: #FAF8F3 !important;
+  font-weight: 600 !important;
+  padding: 10px;
+  margin-left: 10px;
+  transition: background-color 1s ease;
+  width: 150px;
+  max-height: 2rem !important;
+}
+
+.coupon-input{
+  width: 220px;
+  height: 26px;
+  border-radius: 4px;
+}
+.create-order-button {
+  background-color: #315149 !important;
+  color: #FAF8F3 !important;
+  font-weight: 500 !important;
+  padding: 10px;
+  margin-left: 10px;
+  transition: background-color 1s ease;
+  width: 400px;
+  margin-top: 1rem !important;
+  height: 2.7rem !important;
+  font-size: 1.2rem;
+}
+
+/* .create-order-button:hover {
+  background-color: #739cdb;
+  transform: scale(1.05);
+  transition: transform 0.5s ease;
+} */
+
+.create-order-button:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s ease;
+}
+
+.cart-container {
+  padding: 10px;
+}
+
+.inner-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.table {
+  min-width: 50%;
+}
+
+.tour-img {
+  width: 120px;
+  height: 60px;
+  padding: 8px;
+}
+
+.total-price-container {
+  width: 300%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+  gap: 12px;
+  height: 100%;
+  flex: 1 1 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.coupon-code {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.total-price-heading {
+  font-size: 16px;
+}
+
+.total-price {
+  font-weight: bold;
+  font-size: 22x;
+  margin:0;
+  padding: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.cart-items
+{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}

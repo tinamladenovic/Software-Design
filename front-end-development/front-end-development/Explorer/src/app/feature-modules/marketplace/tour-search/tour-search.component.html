@@ -1,0 +1,40 @@
+<div>
+  <app-map (pinnedPlace)="onPinPlaced($event)"></app-map>
+  <form class="searchForm" [formGroup]="searchForm" (ngSubmit)="search()">
+    <mat-form-field appearance="fill">
+      <mat-label>Range</mat-label>
+      <input matInput formControlName="range" type="text" />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">
+      <span>Search</span>
+    </button>
+  </form>
+  <div toastContainer></div>
+
+  <div *ngIf="tours.length > 0">
+    <h2>List of Tours</h2>
+    <div class="list-of-tours">
+      <table class="table-container">
+        <thead>
+          <tr class="table-row table-header">
+            <th class="table-cell">Tour Name</th>
+            <th class="table-cell">Description</th>
+            <th class="table-cell">Tags</th>
+            <th class="table-cell">Difficulty</th>
+            <th class="table-cell">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tour of tours" class="table-row">
+            <td class="table-cell">{{ tour.name }}</td>
+            <td class="table-cell">{{ tour.description }}</td>
+            <td class="table-cell">{{ tour.tags }}</td>
+            <td class="table-cell">{{ tour.difficult }}</td>
+            <td class="table-cell">{{ tour.price }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  

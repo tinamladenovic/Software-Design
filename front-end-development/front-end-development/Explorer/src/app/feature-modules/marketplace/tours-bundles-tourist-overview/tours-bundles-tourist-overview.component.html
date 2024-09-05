@@ -1,0 +1,26 @@
+<div class = "main-container">
+    <div class = "bundles-overview">
+        <div class = "bundle" *ngFor="let bundle of bundles">
+            <mat-card class="example-card">
+                <mat-card-header>
+                <mat-card-subtitle>Bundle</mat-card-subtitle>
+                <mat-card-title>{{bundle.name}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                <div class = "tours" *ngFor="let tour of bundle.tours">
+                    {{tour.tourName}}
+                </div>
+                <div class = "price">
+                    <p class="p-price">€{{ bundle.price | number: '1.2-2' }}</p>
+                </div>
+                <mat-divider></mat-divider>
+                </mat-card-content>
+                <mat-card-actions>
+                <button mat-raised-button color="primary" class = "buy-button" (click) = "addToCart(bundle)">Add To Cart</button>
+                </mat-card-actions>
+                <mat-card-footer>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+    </div>  
+</div>  
